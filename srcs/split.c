@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 15:45:51 by gchamore          #+#    #+#             */
-/*   Updated: 2023/11/22 11:47:03 by gchamore         ###   ########.fr       */
+/*   Created: 2024/01/24 17:02:31 by gchamore          #+#    #+#             */
+/*   Updated: 2024/01/24 17:02:47 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../headers/push_swap.h"
 
 static void	free_split(char **split, unsigned int i)
 {
@@ -103,48 +103,3 @@ char	**ft_split(char const *s, char c)
 	split[count_words(s, c)] = NULL;
 	return (split);
 }
-
-//	La fonction ft_split est une fonction du langage C qui
-//	divise la chaîne de caractères s en un tableau de
-//	chaînes de caractères en utilisant le caractère c comme
-//	délimiteur. La dernière chaîne dans le tableau est
-//	suivie d'un pointeur nul.
-
-// void free_split_result(char **result) 
-// {
-//     char **ptr = result;
-//     while (*ptr) 
-// 	{
-//         free(*ptr);
-//         ptr++;
-//     }
-//     free(result);
-// }
-
-// int main() 
-// {
-//     const char *input_string = "This,is,a,test,string";
-//     char separator = ',';
-
-//     char **result = ft_split(input_string, separator);
-
-//     if (result == NULL) {
-//         fprintf(stderr, "Erreur lors de l'appel à ft_split.\n");
-//         return 1;
-//     }
-
-//     // Afficher les résultats
-//     printf("Chaîne d'entrée: '%s'\n", input_string);
-//     printf("Résultat du split:\n");
-
-//     char **ptr = result;
-//     while (*ptr) {
-//         printf("'%s'\n", *ptr);
-//         ptr++;
-//     }
-
-//     // Libérer la mémoire allouée
-//     free_split_result(result);
-
-//     return 0;
-// }

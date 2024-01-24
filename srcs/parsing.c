@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:42:49 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/24 10:18:28 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:56:12 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,8 @@ void	*ft_parse_a(int argc, char **argv, t_list *head_a)
 
 	y = 1;
 	pile_a = head_a;
+	// if(argc == 2)
+		
 	while (y < argc)
 	{
 		str = argv[y];
@@ -126,13 +128,12 @@ void	*ft_parse_a(int argc, char **argv, t_list *head_a)
 			return (NULL);
 		if (y < argc - 1)
         {
-            pile_a->next = ft_lstnew(NULL);
+            pile_a->next = ft_lstnew();
             pile_a = pile_a->next;
         }
         y++;
 	}
-	ft_ranking(argc - 1, head_a, pile_a);
-	return (head_a);
+	return (ft_ranking(argc - 1, head_a, pile_a), head_a);
 }
 
 // faire le ranking en verifiant pour chaque maillon de la liste combien il y a d'element plus petit (si il y a 5 elements plus petits alors il s'agit du 6eme element de la liste.)

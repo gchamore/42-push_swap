@@ -6,58 +6,44 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:17:47 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/22 17:03:15 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/24 12:53:26 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-# include <stdarg.h>
-# include <stdio.h>
+// pa (push a): Takes the arg_1 element on top of b and puts it on a. Does nothing if b is empty. 
+// pb (push b): Takes the arg_1 element on top of a and puts it on b. Does nothing if a is empty. 
 
-void	ft_push_a(t_list *lst1, t_list *lst2)
+void	*ft_push_a(t_list **lst_B, t_list **lst_A)
 {
-	ft_push(&lst1, &lst2);
-	printf("pa");
+	if(!lst_B)
+		return (NULL);
+	if (ft_push(lst_B, lst_A) == NULL)
+		return (NULL);
+	printf("pa\n");
+	return (NULL);
 }
 
-void	ft_push_b(t_list *lst1, t_list *lst2)
+void	*ft_push_b(t_list **lst_A, t_list **lst_B)
 {
-	ft_push(&lst1, &lst2);
-	printf("pb");
+	if(!lst_A)
+		return (NULL);
+	if (ft_push(lst_A, lst_B) == NULL)
+		return (NULL);
+	printf("pb\n");
+	return (NULL);
 }
 
-void	add_node(t_list **head)
+void *ft_push(t_list** lst_1, t_list** lst_2)
 {
-	t_list *lst;
+	t_list	*tmp;
 	
-	if (!head)
-		return ;
-	lst = ft_lstnew(NULL);
-	lst->next = *head;
-	*head = lst;
-	
+    if (*lst_1 == NULL)
+        return (NULL);
+    tmp = *lst_1;
+    *lst_1 = (*lst_1)->next;
+    tmp->next = *lst_2;
+    *lst_2 = tmp;
+	return (lst_2);
 }
-
-void ft_push(t_list **lst_b, t_list **lst_a)
-{
-	t_list *new_node;
-	t_list *temp;
-	
-    if (lst_a != NULL && *lst_a != NULL)
-    {
-        new_node->content = ft_lstnew((*lst_a)->content);
-        new_node->next = *lst_b;
-        lst_b = &new_node;
-		printf("%d", lst_b);
-		
-		temp = *lst_a;
-        *lst_a = (*lst_a)->next;
-        free(temp->content);
-        free(temp);
-    }
-}
-// erreur a refaire.

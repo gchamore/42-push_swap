@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:44:52 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/23 14:10:56 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:20:35 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,32 +43,6 @@ char	*ft_strdup(const char *str1)
 	return (str);
 }
 
-long int	ft_atol(const char *str)
-{
-	int	i;
-	long int	total;
-	long int	signe;
-	
-	total = 0;
-	i = 0;
-	signe = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-		{
-			signe = signe * (-1);
-		}
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		total = total * 10 + (str[i++] - '0');
-	}
-	return (total * signe);
-}
-
 int	ft_lstsize(t_list *lst)
 {
 	int	size;
@@ -86,26 +60,15 @@ int	ft_lstsize(t_list *lst)
 	return (0);
 }
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew()
 {
 	t_list	*ptr;
 
 	ptr = (t_list *)malloc(sizeof(t_list));
 	if (!ptr)
 		return (NULL);
-	ptr->content = content;
+	ptr->content = 0;
 	ptr->next = NULL;
 	return (ptr);
 }
 
-void ft_free_lst(t_list *lst)
-{
-	while (lst != NULL)
-	{
-		t_list *next = lst->next;
-		free(lst->content);
-		free(lst->rank);
-		free(lst);
-		lst = next;
-	}
-}
