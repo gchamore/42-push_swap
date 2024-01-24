@@ -32,7 +32,7 @@ long int	ft_atol(const char *str);//modify not libft
 //#		   Parsing functions	  #
 //#################################
 
-void	ft_parse_a(int argc, char **argv, t_list *head_a);
+void	*ft_parse_a(int argc, char **argv, t_list *head_a);
 void	*ft_parse_one_arg(t_list *head_a, t_list *pile_a, char *str);
 void	*ft_str_check(char *str);
 int		ft_int_check_lst(t_list *head,long int *search);
