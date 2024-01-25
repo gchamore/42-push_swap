@@ -6,19 +6,18 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:51:17 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/24 15:17:31 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/25 11:48:22 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-void ft_free_lst(t_list *lst)
+void ft_free(t_list *lst)
 {
 	while (lst != NULL)
 	{
 		t_list *next;
 		next = lst->next;
-		
 		if(lst->content)
 			free(lst->content);
 		if(lst->rank)
