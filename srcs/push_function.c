@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:17:47 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/24 12:53:26 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:43:40 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_push_a(t_list **lst_B, t_list **lst_A)
 		return (NULL);
 	if (ft_push(lst_B, lst_A) == NULL)
 		return (NULL);
-	printf("pa\n");
+	ft_printf("pa\n");
 	return (NULL);
 }
 
@@ -31,7 +31,7 @@ void	*ft_push_b(t_list **lst_A, t_list **lst_B)
 		return (NULL);
 	if (ft_push(lst_A, lst_B) == NULL)
 		return (NULL);
-	printf("pb\n");
+	ft_printf("pb\n");
 	return (NULL);
 }
 

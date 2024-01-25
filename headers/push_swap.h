@@ -12,28 +12,30 @@ typedef	struct s_list
 {
 	long int		*content;
 	int				*rank;
-	int				*nb_list;
 	struct s_list	*next;
 	struct s_list	*prev;
 }	t_list;
 
-
 //#################################
-//#			LIBFT functions		  #
+//#			   LIBFT	     	  #
 //#################################
 
 size_t		ft_strlen(const char *s);
 char		*ft_strdup(const char *str1);
 int			ft_lstsize(t_list *lst);
 t_list		*ft_lstnew(void *content);
-void		ft_lstadd_back(t_list **lst, t_list *new);
-void		*ft_lstlast(t_list **lst);
+int			ft_printf(const char *str, ...);
 
 //#################################
 //#			  Mod LIBFT  		  #
 //#################################
 
-long int	ft_atol(const char *str);//modify not libft
+long int	ft_atol(const char *str);
+char		**ft_split(char *str);
+void		*verif_str(char **split, char *str, int i);
+void		ft_free(t_list *lst);
+void		ft_lstadd_back(t_list **lst, t_list *new);
+void		*ft_lstlast(t_list **lst);
 
 //#################################
 //#		   Parsing functions	  #
@@ -44,18 +46,21 @@ void	*ft_parse_one_arg(t_list *head_a, t_list *pile_a, char *str);
 void	*ft_str_check(char *str);
 int		ft_int_check_lst(t_list *head,long int *search);
 void	ft_print_piles(t_list *head_a, t_list *head_b);
-void	*ft_parse_1_arg(char **split, t_list *head_a);
-char	**ft_split(char *str);
-void	*verif_str(char **split, char *str, int i);
-int		count_rows(char **tab);
+void	ft_ranking(t_list *head_a, t_list *pile_a);
 
 //#################################
-//#	     error + rank + clean     #
+//#	 Parsing functions if 1 arg	  #
+//#################################
+
+void	*ft_parse_1_arg(char **split, t_list *head_a);
+int		count_rows(char **tab);
+void	free_split(char **split);
+
+//#################################
+//#	     		ERROR 			  #
 //#################################
 
 void	ft_error();
-void	ft_ranking(int argc, t_list *head_a, t_list *pile_a);
-void	ft_free(t_list *lst);//modify not libft
 
 //#################################
 //#	     		 SWAP		      #

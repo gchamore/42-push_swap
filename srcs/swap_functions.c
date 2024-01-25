@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:35:24 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/24 15:39:42 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:44:10 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_swap_a(t_list **lst_A)
 		return (NULL);
 	if (ft_swap(lst_A) == NULL)
 		return (NULL);
-	printf("sa\n");
+	ft_printf("sa\n");
 	return (NULL);
 }
 
@@ -32,7 +32,7 @@ void	*ft_swap_b(t_list **lst_B)
 		return (NULL);
 	if (ft_swap(lst_B) == NULL)
 		return (NULL);
-	printf("sb\n");
+	ft_printf("sb\n");
 	return (NULL);
 }
 
@@ -44,7 +44,7 @@ void	*ft_swap_ab(t_list **lst1, t_list **lst2)
 		return (NULL);
 	if (ft_swap(lst2) == NULL)
 		return (NULL);
-	printf("ss\n");
+	ft_printf("ss\n");
 	return (NULL);
 }
 void	*ft_swap(t_list **lst)

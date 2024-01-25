@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:39:03 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/24 16:48:08 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:43:56 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_reverse_rotate_a(t_list **lst_A)
 		return (NULL);
 	if (ft_reverse_rotate(lst_A) == NULL)
 		return (NULL);
-	printf("rra\n");
+	ft_printf("rra\n");
 	return (NULL);
 }
 
@@ -32,7 +32,7 @@ void	*ft_reverse_rotate_b(t_list **lst_B)
 		return (NULL);
 	if (ft_reverse_rotate(lst_B) == NULL)
 		return (NULL);
-	printf("rrb\n");
+	ft_printf("rrb\n");
 	return (NULL);
 }
 
@@ -44,7 +44,7 @@ void	*ft_reverse_rotate_ab(t_list **lst1, t_list **lst2)
 		return (NULL);
 	if (ft_reverse_rotate(lst2) == NULL)
 		return (NULL);
-	printf("rrr\n");
+	ft_printf("rrr\n");
 	return (NULL);
 }
 

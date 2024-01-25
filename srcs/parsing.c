@@ -6,22 +6,20 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:42:49 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/25 13:16:53 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:44:45 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-void	ft_ranking(int argc, t_list *head_a, t_list *pile_a)
+void	ft_ranking(t_list *head_a, t_list *pile_a)
 {
 	t_list	*lst;
 	int	rank_count;
-	int	nb_of_arg_in_lst;
 	
 	pile_a = head_a;
 	lst = head_a;
 	rank_count = 0;
-	nb_of_arg_in_lst = 0;
 	while(lst != NULL)
 	{
 		pile_a = head_a;
@@ -34,10 +32,8 @@ void	ft_ranking(int argc, t_list *head_a, t_list *pile_a)
 		}
 		lst->rank = malloc(sizeof(int));                                                                                                                                                                                                                                                                                                                                                                
 		*lst->rank = rank_count;
-		nb_of_arg_in_lst += 1;
 		lst = lst->next;
 	}
-	printf("nb of arg in lst = %d \nnb of arg = %d\n", nb_of_arg_in_lst, argc);
 }
 
 int int_check_lst(t_list *head,long int *search)
@@ -133,7 +129,7 @@ void	*ft_parse_a(int argc, char **argv, t_list *head_a)
         }
         y++;
 	}
-	return (ft_ranking(argc - 1, head_a, pile_a), head_a);
+	return (ft_ranking(head_a, pile_a), head_a);
 }
 
 // faire le ranking en verifiant pour chaque maillon de la liste combien il y a d'element plus petit (si il y a 5 elements plus petits alors il s'agit du 6eme element de la liste.)

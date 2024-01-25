@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:57:19 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/25 13:18:39 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:44:56 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,5 +106,5 @@ void	*ft_parse_1_arg(char **argv, t_list *head_a)
         }
         y++;
 	}
-	return (ft_ranking(len - 1, head_a, pile_a), free_split(split), head_a);
+	return (ft_ranking(head_a, pile_a), free_split(split), head_a);
 }

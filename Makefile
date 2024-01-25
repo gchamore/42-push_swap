@@ -1,10 +1,14 @@
-NAME = libft_swap.a
+NAME = lib_swap.a
 
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -I./includes/
 
 RM = rm -rf
+
+SRCS = srcs/ft_print_piles.c srcs/mod_libft.c srcs/parsing_1_arg.c srcs/parsing.c \
+		srcs/push_function.c srcs/reverse_rotate_functions.c srcs/rotate_functions.c \
+		srcs/swap_functions.c
 
 OBJS = $(SRCS:.c=.o)
 
