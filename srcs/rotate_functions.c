@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 12:53:02 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/25 13:44:04 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:21:21 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,16 @@ void	*ft_rotate_ab(t_list **lst1, t_list **lst2)
 
 void	*ft_rotate(t_list **lst)
 {
-	t_list	*head;
     t_list	*next_arg;
 	t_list	*start;
 
-    if (*lst != NULL || (*lst)->next != NULL)
+    if (*lst != NULL && (*lst)->next != NULL)
     {
 		start = *lst;
 		next_arg = (*lst)->next;
 		*lst = next_arg;
-		next_arg->next = (*lst)->next;
-		head = *lst;
+		start->next = NULL;
 		ft_lstadd_back(lst, start);
-		*lst = head;
     }
 	else
 		return (NULL);

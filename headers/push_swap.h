@@ -97,4 +97,11 @@ void	*ft_reverse_rotate_b(t_list **lst_B);
 void	*ft_reverse_rotate_ab(t_list **lst_A, t_list **lst_B);
 void	*ft_reverse_rotate(t_list **lst);
 
+//#################################
+//#	    		 ALGO		      #
+//#################################
+
+int		count_rank(t_list	**head);
+void	algo_tri(t_list **head_a, t_list **head_b);
+
 #endif

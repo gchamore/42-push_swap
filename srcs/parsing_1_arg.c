@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:57:19 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/25 13:44:56 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:19:11 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void free_split(char **split)
     free(split);
 }
 
-int	count_rows(char** tab)
+int	count_rows(char	**tab)
 {
     int row_count;
 	

@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:51:17 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/25 11:48:22 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:13:26 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,9 @@ void	*ft_lstlast(t_list **lst)
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list *temp;
+	
+	temp = *lst;
 	if (!new)
 		return ;
 	if (!*lst)
@@ -76,5 +79,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		(*lst)->next = new;
 		*lst = (*lst)->next;
 		(*lst)->next = NULL;
+		*lst = temp;
 	}
 }

@@ -6,11 +6,11 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:36:25 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/25 13:40:20 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/26 17:07:03 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers/push_swap.h"
+#include "../headers/push_swap.h"
 
 int main (int argc, char **argv)
 {
@@ -27,6 +27,10 @@ int main (int argc, char **argv)
 			head_a = ft_parse_a(argc, argv, head_a);
 		if(!head_a)
 			return (ft_free(head_a), ft_free(head_b),ft_error(), 0);
+		ft_print_piles(head_a, head_b);
+		ft_printf("\n---------------------------------------------------------- \n");
+		algo_tri(&head_a, &head_b);
+		ft_printf("\n---------------------------------------------------------- \n");
 		ft_print_piles(head_a, head_b);
 	}
 	ft_free(head_a);

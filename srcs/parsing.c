@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:42:49 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/25 13:44:45 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:53:24 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ void	ft_ranking(t_list *head_a, t_list *pile_a)
 	
 	pile_a = head_a;
 	lst = head_a;
-	rank_count = 0;
+	rank_count = 1;
 	while(lst != NULL)
 	{
 		pile_a = head_a;
-		rank_count = 0;
+		rank_count = 1;
 		while(pile_a != NULL)
 		{
 			if (*lst->content > *pile_a->content)
