@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:38:33 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/26 15:40:40 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/29 14:06:30 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,15 @@ void	ft_print_piles(t_list *head_a, t_list *head_b)
 	ft_printf("\nPILE A = \n");
 	while (pile_a != NULL)
     {
-		if (pile_a->content != NULL)
-    		// ft_printf("%d, ", *pile_a->content);
-		ft_printf("%d, ", *pile_a->rank);
+    	// ft_printf("%d, ", pile_a->content);
+		ft_printf("%d, ", pile_a->rank);
         pile_a = pile_a->next;
     }
 	ft_printf("\n\nPILE B = \n");
 	while (pile_b != NULL)
     {
-		if (pile_b->content != NULL)
-    		// ft_printf("%d, ", *pile_b->content);
-		ft_printf("%d, ", *pile_b->rank);
+    	// ft_printf("%d, ", pile_b->content);
+		ft_printf("%d, ", pile_b->rank);
         pile_b = pile_b->next;
     }
 }

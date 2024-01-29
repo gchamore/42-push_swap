@@ -10,11 +10,19 @@
 
 typedef	struct s_list
 {
-	long int		*content;
-	int				*rank;
+	long int		content;
+	int				rank;
 	struct s_list	*next;
 	struct s_list	*prev;
 }	t_list;
+
+typedef struct nbs nbs;
+struct nbs
+{
+    int		count;
+    int		div1;
+	int		div2;
+};
 
 //#################################
 //#			   LIBFT	     	  #
@@ -23,7 +31,6 @@ typedef	struct s_list
 size_t		ft_strlen(const char *s);
 char		*ft_strdup(const char *str1);
 int			ft_lstsize(t_list *lst);
-t_list		*ft_lstnew(void *content);
 int			ft_printf(const char *str, ...);
 
 //#################################
@@ -36,6 +43,7 @@ void		*verif_str(char **split, char *str, int i);
 void		ft_free(t_list *lst);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 void		*ft_lstlast(t_list **lst);
+t_list		*ft_new_lst();
 
 //#################################
 //#		   Parsing functions	  #
@@ -102,6 +110,8 @@ void	*ft_reverse_rotate(t_list **lst);
 //#################################
 
 int		count_rank(t_list	**head);
-void	algo_tri(t_list **head_a, t_list **head_b);
+void	algo_pre_tri(t_list **head_a, t_list **head_b, nbs *nbs);
+void		fill_struct(t_list **head, nbs *nbs);
+void		*init_struct(nbs *nbs, t_list **head_a, t_list **head_b);
 
 #endif

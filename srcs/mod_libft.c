@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:51:17 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/26 15:13:26 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/29 17:28:27 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,22 @@
 
 void ft_free(t_list *lst)
 {
-	while (lst != NULL)
-	{
-		t_list *next;
-		next = lst->next;
-		if(lst->content)
-			free(lst->content);
-		if(lst->rank)
-			free(lst->rank);
-		if(lst)
-			free(lst);
-		lst = next;
-	}
+	t_list *next;
+	
+    while (lst != NULL)
+    {
+        next = lst->next;
+        free(lst);
+        lst = next;
+    }
 }
 
 long int	ft_atol(const char *str)
 {
-	int	i;
+	int			i;
 	long int	total;
 	long int	signe;
-	
+
 	total = 0;
 	i = 0;
 	signe = 1;
@@ -67,7 +63,7 @@ void	*ft_lstlast(t_list **lst)
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list *temp;
-	
+
 	temp = *lst;
 	if (!new)
 		return ;
@@ -81,4 +77,16 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		(*lst)->next = NULL;
 		*lst = temp;
 	}
+}
+
+t_list		*ft_new_lst()
+{
+	t_list	*ptr;
+
+	ptr = (t_list *)malloc(sizeof(t_list));
+	if (!ptr)
+		return (NULL);
+	ptr->content = 0;
+	ptr->next = NULL;
+	return (ptr);
 }

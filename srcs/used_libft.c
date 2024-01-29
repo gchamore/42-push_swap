@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:44:52 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/25 13:17:49 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/29 14:40:05 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,15 +60,4 @@ int	ft_lstsize(t_list *lst)
 	return (0);
 }
 
-t_list		*ft_lstnew(void *content)
-{
-	t_list	*ptr;
-
-	ptr = (t_list *)malloc(sizeof(t_list));
-	if (!ptr)
-		return (NULL);
-	ptr->content = content;
-	ptr->next = NULL;
-	return (ptr);
-}
 

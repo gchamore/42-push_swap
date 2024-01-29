@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:57:19 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/25 14:19:11 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/29 15:24:51 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,12 +96,12 @@ void	*ft_parse_1_arg(char **argv, t_list *head_a)
 	while (y < len)
 	{	
 		str = split[y];
-		pile_a->content = ft_parse_one_arg(head_a, pile_a, str);
-		if(!pile_a->content)
+		pile_a = ft_parse_one_arg(head_a, pile_a, str);
+		if(!pile_a)
 			return (NULL);
 		if (y < len - 1)
         {
-            pile_a->next = ft_lstnew(NULL);
+            pile_a->next = ft_new_lst();
             pile_a = pile_a->next;
         }
         y++;
