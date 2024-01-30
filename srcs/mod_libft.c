@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:51:17 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/29 17:28:27 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/30 10:16:58 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void ft_free(t_list *lst)
 {
 	t_list *next;
-	
+
     while (lst != NULL)
     {
         next = lst->next;

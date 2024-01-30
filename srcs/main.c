@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:36:25 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/29 17:08:54 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/01/30 16:07:57 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main (int argc, char **argv)
 {
 	t_list	*head_a;
 	t_list	*head_b;
-	nbs		nbs;
+	t_nbs		nbs;
 	
 	init_struct(&nbs, &head_a, &head_b);
 	if (argc > 1)
@@ -30,11 +30,13 @@ int main (int argc, char **argv)
 		ft_print_piles(head_a, head_b);
 		ft_printf("\n---------------------------------------------------------- \n");
 		fill_struct(&head_a, &nbs);
-		algo_pre_tri(&head_a, &head_b, &nbs);
 		ft_printf("\n---------------------------------------------------------- \n");
-		// ft_print_piles(head_a, head_b);
-		// insertion_sort(&head_a, &head_b);
+		ft_printf("\n TRI \n");
+		ft_printf("\n---------------------------------------------------------- \n");
+		algo_tri(&head_a, &head_b, &nbs);
 		ft_print_piles(head_a, head_b);
+		ft_printf("\n---------------------------------------------------------- \n");
+		ft_printf("\n\ncount = %d\ndv1 = %d\ndv2 = %d\n", nbs.count, nbs.div1, nbs.div2);
 	}
 	ft_free(head_a);
 	ft_free(head_b);

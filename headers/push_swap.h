@@ -16,13 +16,12 @@ typedef	struct s_list
 	struct s_list	*prev;
 }	t_list;
 
-typedef struct nbs nbs;
-struct nbs
+typedef struct s_nbs
 {
     int		count;
     int		div1;
 	int		div2;
-};
+}	t_nbs;
 
 //#################################
 //#			   LIBFT	     	  #
@@ -110,8 +109,13 @@ void	*ft_reverse_rotate(t_list **lst);
 //#################################
 
 int		count_rank(t_list	**head);
-void	algo_pre_tri(t_list **head_a, t_list **head_b, nbs *nbs);
-void		fill_struct(t_list **head, nbs *nbs);
-void		*init_struct(nbs *nbs, t_list **head_a, t_list **head_b);
+void	ft_algo_pre_tri(t_list **head_a, t_list **head_b, t_nbs *nbs);
+void	fill_struct(t_list **head, t_nbs *nbs);
+void	*init_struct(t_nbs *nbs, t_list **head_a, t_list **head_b);
+void	ft_big_tri(t_list **head_a, t_list **head_b, t_nbs *nbs, int compteur);
+void	ft_middle_tri(t_list **head_a, t_list **head_b, t_nbs *nbs, int compteur);
+void	ft_little_tri(t_list **head_a, t_list **head_b, t_nbs *nbs, int compteur);
+void	algo_tri(t_list **head_a, t_list **head_b, t_nbs *nbs);
+
 
 #endif
