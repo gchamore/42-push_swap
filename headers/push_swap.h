@@ -112,10 +112,11 @@ int		count_rank(t_list	**head);
 void	ft_algo_pre_tri(t_list **head_a, t_list **head_b, t_nbs *nbs);
 void	fill_struct(t_list **head, t_nbs *nbs);
 void	*init_struct(t_nbs *nbs, t_list **head_a, t_list **head_b);
-void	ft_big_tri(t_list **head_a, t_list **head_b, t_nbs *nbs, int compteur);
+void	ft_big_tri(t_list **head_a, t_list **head_b, t_nbs *nbs);
 void	ft_middle_tri(t_list **head_a, t_list **head_b, t_nbs *nbs, int compteur);
 void	ft_little_tri(t_list **head_a, t_list **head_b, t_nbs *nbs, int compteur);
 void	algo_tri(t_list **head_a, t_list **head_b, t_nbs *nbs);
+void	quick_sort_big(t_list **head_a, t_list **head_b, t_nbs *nbs);
 
 
 #endif
