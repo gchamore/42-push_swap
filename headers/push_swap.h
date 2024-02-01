@@ -12,6 +12,7 @@ typedef	struct s_list
 {
 	long int		content;
 	int				rank;
+	int				nb_moove;
 	struct s_list	*next;
 	struct s_list	*prev;
 }	t_list;
@@ -21,6 +22,8 @@ typedef struct s_nbs
     int		count;
     int		div1;
 	int		div2;
+	int		best_pos;
+	int 	best_neg;
 }	t_nbs;
 
 //#################################
@@ -113,10 +116,18 @@ void	ft_algo_pre_tri(t_list **head_a, t_list **head_b, t_nbs *nbs);
 void	fill_struct(t_list **head, t_nbs *nbs);
 void	*init_struct(t_nbs *nbs, t_list **head_a, t_list **head_b);
 void	ft_big_tri(t_list **head_a, t_list **head_b, t_nbs *nbs);
-void	ft_middle_tri(t_list **head_a, t_list **head_b, t_nbs *nbs, int compteur);
-void	ft_little_tri(t_list **head_a, t_list **head_b, t_nbs *nbs, int compteur);
+void	ft_middle_tri(t_list **head_a, t_list **head_b, t_nbs *nbs);
+void	ft_little_tri(t_list **head_a, t_list **head_b, t_nbs *nbs);
 void	algo_tri(t_list **head_a, t_list **head_b, t_nbs *nbs);
 void	quick_sort_big(t_list **head_a, t_list **head_b, t_nbs *nbs);
-
+int		count_lst(t_list **head);
+int		which_part(t_list **head, int search);
+int		search_position(t_list **head, int search);
+void	ft_put_search_first_a(t_list **head_a, int search);
+int		ft_best_pos(t_list **head_a, t_list **head_b, t_nbs *nbs);
+int		ft_best_neg(t_list **head_a, t_list **head_b, t_nbs *nbs);
+int		check_best_option(t_list **head_b);
+int		ft_tell_me_positiv(t_list **head_a, t_list **head_b, t_nbs *nbs);
+int		ft_tell_me_negativ(t_list **head_a, t_list **head_b, t_nbs *nbs);
 
 #endif

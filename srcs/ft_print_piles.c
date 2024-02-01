@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:38:33 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/30 12:00:59 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:49:13 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,3 @@ void	ft_print_piles(t_list *head_a, t_list *head_b)
         pile_b = pile_b->next;
     }
 }
-// 	printf("\n\n");
-// 	pile_a = head_a;
-// 	ft_swap(&pile_a);
-// 	while (pile_a != NULL)
-//     {
-//     	printf("%ld, ", *pile_a->content);
-// 		// printf("%d\n", *pile_a->rank);
-//         pile_a = pile_a->next;
-//     }
-// 	ft_free_lst(head_a);
-// }

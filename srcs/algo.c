@@ -6,20 +6,31 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:14:52 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/31 15:04:11 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:41:13 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
+void	algo_tri(t_list **head_a, t_list **head_b, t_nbs *nbs)
+{
+	int	compteur;
+	
+	compteur = 0;
+	fill_struct(head_a, nbs);
+	ft_algo_pre_tri(head_a, head_b, nbs);
+	ft_big_tri(head_a, head_b, nbs);
+	// ft_middle_tri(head_a, head_b, nbs);
+	// ft_little_tri(head_a, head_b, nbs);
+}
 void	ft_algo_pre_tri(t_list **head_a, t_list **head_b, t_nbs *nbs)
 {
 	int		check;
-	
+
 	check = nbs->count;
 	printf("\n\n&&nb de RANK %d&&\n\n", nbs->count);
 	while(*head_a != NULL && check >= 1)
-	{
+	{			
 		if ((*head_a)->rank > nbs->div1 && ((*head_a)->rank <= nbs->div2))
 			ft_push_b(head_a, head_b);
 		else if ((*head_a)->rank <= nbs->div1)
@@ -35,143 +46,254 @@ void	ft_algo_pre_tri(t_list **head_a, t_list **head_b, t_nbs *nbs)
 		ft_push_b(head_a, head_b);
 }
 
-// void	ft_big_tri(t_list **head_a, t_list **head_b, t_nbs *nbs, int compteur)
-// {
-// 	int	rotate;
-// 	int	found;
-// 	int	pass;
-	
-// 	rotate = nbs->count;
-// 	found = 0;
-// 	pass = 0;
-// 	while((*head_b)->rank > nbs->div2)
-// 	{
-// 		if ((*head_b)->rank != rotate || (*head_b)->rank != (rotate - 1))
-// 		{
-// 			if ((*head_b)->rank < (*head_b)->next->rank)
-// 				ft_swap_b(head_b);
-// 			else
-// 			{
-// 				ft_rotate_b(head_b);
-// 				compteur++;
-// 			}
-// 		}
-// 		else 
-// 		{
-// 			if((*head_b)->rank == rotate && found != 1)
-// 			{
-// 				ft_push_a(head_b, head_a);
-// 				rotate--;
-// 				found = 1;
-// 				pass += 1;
-// 			}
-// 			else if ((*head_b)->rank == (rotate - 1) && found != -1)
-// 			{	
-// 				ft_push_a(head_b, head_a);
-// 				rotate--;
-// 				if ((*head_a)->next != NULL && (*head_a)->rank > (*head_a)->next->rank) 
-// 					ft_swap_a(head_a);
-// 				found = -1;
-// 				pass +=1;
-// 			}
-// 			while(pass == 2 && compteur != 0)
-// 			{
-// 				ft_reverse_rotate_b(head_b);
-// 				compteur--;
-// 			}
-// 		}
-// 		found = 0;
-// 		pass = 0;
-// 	}
-// }
+// tri de la premiere partie de B
 
-// void	ft_middle_tri(t_list **head_a, t_list **head_b, t_nbs *nbs, int compteur)
-// {
-// 	int	rotate;
-	
-// 	rotate = nbs->count - (nbs->count - nbs->div2);
-// 	while((*head_b)->rank <= nbs->div2 && (*head_b)->rank > nbs->div1)
-// 	{
-// 		if ((*head_b)->rank != rotate)
-// 		{
-// 			ft_rotate_b(head_b);
-// 			compteur++;
-// 		}
-// 		else if((*head_b)->rank == rotate)
-// 		{
-// 			ft_push_a(head_b, head_a);
-// 			rotate--;
-// 			while(compteur != 0)
-// 			{
-// 				ft_reverse_rotate_b(head_b);
-// 				compteur--;
-// 			}
-// 		}
-// 	}
-// }
-
-// void	ft_little_tri(t_list **head_a, t_list **head_b, t_nbs *nbs, int compteur)
-// {
-// 	int	rotate;
-	
-// 	rotate = (nbs->count - (nbs->count - nbs->div2)) - nbs->div1;
-// 	while(*head_b != NULL && (*head_b)->rank <= nbs->div1)
-// 	{
-// 		if ((*head_b)->rank != rotate)
-// 		{
-// 			ft_rotate_b(head_b);
-// 			compteur++;
-// 		}
-// 		else if((*head_b)->rank == rotate)
-// 		{
-// 			ft_push_a(head_b, head_a);
-// 			rotate--;
-// 			while(compteur != 0)
-// 			{
-// 				ft_reverse_rotate_b(head_b);
-// 				compteur--;
-// 			}
-// 		}
-// 	}
-// }
-
-void	algo_tri(t_list **head_a, t_list **head_b, t_nbs *nbs)
+void	ft_big_tri(t_list **head_a, t_list **head_b, t_nbs *nbs)
 {
-	int	compteur;
+	t_list	*lst;
+	int	temp;
+	int search;
+
+	lst = *head_a;
+	search = 0;
+	temp = 0;
+	while(*head_b != NULL && (*head_b)->rank > nbs->div2)
+	{
+		if ((*head_b)->next && (*head_b)->rank < (*head_b)->next->rank)
+			ft_swap_b(head_b);
+		if (*head_a == NULL && (*head_b)->next && (*head_b)->rank > (*head_b)->next->rank)
+			ft_push_a(head_b, head_a);
+		else if ((*head_b)->next && (*head_b)->rank > (*head_b)->next->rank)
+		{
+			if (ft_tell_me_positiv(head_a, head_b, nbs) > ft_tell_me_negativ(head_a, head_b, nbs))
+			{	
+				search = ft_tell_me_negativ(head_a, head_b, nbs) - 1;
+				while(search > nbs->div2)
+				{
+					if (search_position(head_b, search) == 0)
+					{
+						if (search_position(head_a, search) != 0)
+						{
+							while(lst != NULL)
+							{
+								if (lst->rank == search)
+								{
+									if (which_part(head_a, search) == 3)
+										;
+									else if (which_part(head_a, search) == 2)
+									{
+										while ((*head_a)->rank != search)
+											ft_reverse_rotate_a(head_a);
+									}
+									else if (which_part(head_a, search) == 1)
+									{
+										while((*head_b)->nb_moove != ft_tell_me_negativ(head_a, head_b, nbs) && (*head_a)->rank != search)
+										{
+											ft_rotate_ab(head_a, head_b);
+											temp++;
+										}
+										while ((*head_a)->rank != search)
+											ft_rotate_a(head_a);
+										while ((*head_b)->nb_moove != ft_tell_me_negativ(head_a, head_b, nbs))
+										{
+											ft_rotate_b(head_b);
+											temp++;
+										}
+									}
+									break ;
+								}
+								else
+									lst = lst->next;
+							}
+							ft_rotate_a(head_a);
+							ft_push_a(head_b, head_a);
+							break;
+						}
+					}
+					else if (search_position(head_b, search) != 0)
+						search--;
+				}
+			}
+			else
+			{
+				search = ft_tell_me_positiv(head_a, head_b, nbs) + 1;
+				while(search <= nbs->count && search > nbs->div2)
+				{
+					if (search_position(head_b, search) == 0)
+					{
+						if (search_position(head_a, search) != 0)
+						{
+							
+							while(lst != NULL)
+							{
+								if (lst->rank == search)
+								{
+									if (which_part(head_a, search) == 3)
+										break ;
+									else if (which_part(head_a, search) == 2)
+									{
+										while ((*head_a)->rank != search)
+											ft_reverse_rotate_a(head_a);
+									}
+									else if (which_part(head_a, search) == 1)
+									{
+										while((*head_b)->nb_moove != ft_tell_me_positiv(head_a, head_b, nbs) && (*head_a)->rank != search)
+										{
+											ft_rotate_ab(head_a, head_b);
+											temp++;
+										}
+										while ((*head_a)->rank != search)
+											ft_rotate_a(head_a);
+										while ((*head_b)->nb_moove != ft_tell_me_positiv(head_a, head_b, nbs))
+										{
+											ft_rotate_b(head_b);
+											temp++;
+										}
+									}
+									break ;
+								}
+								else
+									lst = lst->next;
+							}
+							ft_push_a(head_b, head_a);
+							break;
+						}
+					}
+					else if (search_position(head_b, search) != 0)
+						search++;
+				}
+			}
+		while (temp != 0)
+		{
+			ft_reverse_rotate_b(head_b);
+			temp--;
+
+		}
+		}
+	}
 	
-	compteur = 0;
-	ft_algo_pre_tri(head_a, head_b, nbs);
-	ft_big_tri(head_a, head_b, nbs);
-	// ft_middle_tri(head_a, head_b, nbs, compteur);
-	// ft_little_tri(head_a, head_b, nbs, compteur);
-	// quick_sort_big(head_a, head_b, nbs);
 }
 
+// tri de la deuxieme partie de B
 
-// t_list *temp;
+void	ft_middle_tri(t_list **head_a, t_list **head_b, t_nbs *nbs)
+{
+	int	temp;
+	int search;
+
+	temp = 0;
+	search = 0;
+	while(*head_b != NULL && (*head_b)->rank <= nbs->div2 && (*head_b)->rank > nbs->div1)
+	{
+		temp = 0;
+		if ((*head_b)->next && (*head_b)->rank < (*head_b)->next->rank)
+			ft_swap_b(head_b);
+		if ((*head_a)->rank > nbs->div2 && (*head_b)->next && (*head_b)->rank > (*head_b)->next->rank)
+			ft_push_a(head_b, head_a);
+		else if ((*head_b)->next && (*head_b)->rank > (*head_b)->next->rank)
+		{
+			search = (*head_b)->rank + 1;
+			while(search <= nbs->count && search <= nbs->div2 && (*head_b)->rank > nbs->div1)
+			{
+				if (search_position(head_b, search) == 0)
+				{
+					if (search_position(head_a, search) != 0)
+					{
+						ft_put_search_first_a(head_a, search);
+						ft_push_a(head_b, head_a);
+						temp = 1;
+						break;
+					}
+				}
+				else if (search_position(head_b, search) != 0)
+					search++;
+			}
+			if (temp == 0)
+			{
+				search = (*head_b)->rank - 1;
+				while(search <= nbs->div2 && (*head_b)->rank > nbs->div1)
+				{
+					if (search_position(head_b, search) == 0)
+					{
+						if (search_position(head_a, search) != 0)
+						{
+							ft_put_search_first_a(head_a, search);
+							ft_rotate_a(head_a);
+							ft_push_a(head_b, head_a);
+							break;
+						}
+					}
+					else if (search_position(head_b, search) != 0)
+						search--;
+				}
+			}
+			//check if search -- negativ
+		}
+	}
 	
-// 	while ((*head_b)->rank > nbs->div2)
-// 	{
-// 		if ((*head_b)->rank < (*head_b)->next->rank)
-// 			ft_swap_b(head_b);
-// 		ft_push_a(head_b, head_a);
-// 		temp = *head_a;
-// 		ft_lstlast(&temp);
-// 		if ((*head_a)->next != NULL && (*head_a)->rank > (*head_a)->next->rank) 
-// 		{
-// 			if ((*head_a)->next->next != NULL && (*head_a)->rank > (*head_a)->next->next->rank)
-// 			{
-// 				if(temp->rank > (*head_a)->rank)
-// 				{
-// 					ft_reverse_rotate_a(head_a);
-// 					ft_swap_a(head_a);
-// 					ft_rotate_a(head_a);
-// 				}
-// 				ft_rotate_a(head_a);
-// 			}
-// 			else
-// 				ft_swap_a(head_a);
-// 		}
-		
-// 		ft_big_check(head_a, head_b, nbs);
-// 	}
+}
+
+// tri de la troisieme partie de B
+
+void	ft_little_tri(t_list **head_a, t_list **head_b, t_nbs *nbs)
+{
+	int	temp;
+	int search;
+
+	temp = 0;
+	search = 0;
+	while(*head_b != NULL && (*head_b)->rank <= nbs->div1)
+	{
+		temp = 0;
+		if ((*head_b)->next && (*head_b)->rank < (*head_b)->next->rank)
+			ft_swap_b(head_b);
+		if ((*head_a)->rank > nbs->div1 && (*head_b)->next && (*head_b)->rank > (*head_b)->next->rank)
+			ft_push_a(head_b, head_a);
+		if ((*head_b)->next == NULL && (*head_b)->rank == 1)
+		{
+			ft_put_search_first_a(head_a, 2);
+			ft_push_a(head_b, head_a);
+			break;
+		}
+		else if ((*head_b)->next && (*head_b)->rank > (*head_b)->next->rank)
+		{
+			search = (*head_b)->rank + 1;
+			while(search <= nbs->div1)
+			{
+				if (search_position(head_b, search) == 0)
+				{
+					if (search_position(head_a, search) != 0)
+					{
+						ft_put_search_first_a(head_a, search);
+						ft_push_a(head_b, head_a);
+						temp = 1;
+						break;
+					}
+				}
+				else if (search_position(head_b, search) != 0)
+					search++;
+			}
+			if (temp == 0)
+			{
+				search = (*head_b)->rank - 1;
+				while(search <= nbs->div1)
+				{
+					if (search_position(head_b, search) == 0)
+					{
+						if (search_position(head_a, search) != 0)
+						{
+							ft_put_search_first_a(head_a, search);
+							ft_rotate_a(head_a);
+							ft_push_a(head_b, head_a);
+							break;
+						}
+					}
+					else if (search_position(head_b, search) != 0)
+						search--;
+				}
+			}
+			//check if search -- negativ
+		}
+	}
+	
+}

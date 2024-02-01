@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:36:25 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/31 14:02:35 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:54:47 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ int main (int argc, char **argv)
 		if(!head_a)
 			return (ft_free(head_a), ft_error(), 0);
 		ft_print_piles(head_a, head_b);
-		ft_printf("\n---------------------------------------------------------- \n");
-		fill_struct(&head_a, &nbs);
 		ft_printf("\n---------------------------------------------------------- \n");
 		ft_printf("\n TRI \n");
 		ft_printf("\n---------------------------------------------------------- \n");
