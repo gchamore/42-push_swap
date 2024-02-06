@@ -6,12 +6,31 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:57:05 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/01 17:32:34 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/05 16:17:56 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
+int	ft_is_sorted(t_list **head)
+{
+	t_list *lst;
+	int	small;
+
+	lst = *head;
+	small = check_is_smallest(head);
+	while(lst != NULL)
+	{
+		if (lst->rank != small)
+			return (0);
+		if(lst->rank > lst->next->rank)
+			return (0);
+		lst = lst->next;
+	}
+	return (1);
+}
+
+//compte le nombre d'element de la liste
 int	count_lst(t_list **head)
 {
 	t_list	*lst;
@@ -59,6 +78,7 @@ int	which_part(t_list **head, int search)
 	}
 	return 0;
 }
+
 // Fonction qui retourne le nombre de place en dessous head ou se trouve search
 int	search_position(t_list **head, int search)
 {
@@ -77,14 +97,6 @@ int	search_position(t_list **head, int search)
 	}
 	return (0);
 }
-
-// Fonction qui a pour but de comparer l'efficacite de deux 
-// algo en terme de nombre de moove.
-
-// int	ft_compare(t_list **head_a, t_list **head_b, t_nbs *nbs)
-// {
-	
-// }
 
 // Fonction qui va mettre search en premiere position avec des rotates
 
