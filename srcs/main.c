@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:36:25 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/05 16:47:04 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/06 13:36:28 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int main (int argc, char **argv)
 		ft_printf("TRI ");
 		ft_printf("\n---------------------------------------------------------- \n");
 		ft_is_sorted(&head_a);
-		algo_tri(&head_a, &head_b, &nbs);
+		ft_algo_new(&head_a, &head_b, &nbs);
+		// algo_tri(&head_a, &head_b, &nbs);
 		ft_print_piles(head_a, head_b);
 		ft_printf("\n---------------------------------------------------------- \n");
 		ft_printf("\ncount = %d\ndv1 = %d\ndv2 = %d\n", nbs.count, nbs.div1, nbs.div2);

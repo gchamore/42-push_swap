@@ -6,25 +6,25 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:14:52 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/06 09:46:41 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/06 13:24:24 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 //MENU DE L'ALGO
-void	algo_tri(t_list **head_a, t_list **head_b, t_nbs *nbs)
-{
-	int	compteur;
+// void	algo_tri(t_list **head_a, t_list **head_b, t_nbs *nbs)
+// {
+// 	int	compteur;
 	
-	compteur = 0;
-	fill_struct(head_a, nbs);
-	ft_algo_pre_tri(head_a, head_b, nbs);
-	// ft_big_tri(head_a, head_b, nbs);
-	putsmallest_up(head_a);
-	// ft_big_tri(head_a, head_b, nbs, compteur);
-	// ft_middle_tri(head_a, head_b, nbs);
-	// ft_little_tri(head_a, head_b, nbs);
-}
+// 	compteur = 0;
+// 	fill_struct(head_a, nbs);
+// 	ft_algo_pre_tri(head_a, head_b, nbs);
+// 	ft_big_tri(head_a, head_b, nbs);
+// 	putsmallest_up(head_a);
+// 	ft_big_tri(head_a, head_b, nbs, compteur);
+// 	ft_middle_tri(head_a, head_b, nbs);
+// 	ft_little_tri(head_a, head_b, nbs);
+// }
 //PRE TRI
 void	ft_algo_pre_tri(t_list **head_a, t_list **head_b, t_nbs *nbs)
 {

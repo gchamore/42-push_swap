@@ -13,6 +13,16 @@ typedef	struct s_list
 	long int		content;
 	int				rank;
 	int				moove;
+
+	int				pa;
+	int				ra;
+	int				rb;
+	int				rr;
+	int				rra;
+	int				rrb;
+	int				rrr;
+	int				total;
+
 	struct s_list	*next;
 	struct s_list	*prev;
 }	t_list;
@@ -135,6 +145,20 @@ int		check_if_biggest(t_list **head_a, int rank_b);
 void	ft_tri_three_a(t_list **head_a);
 int		ft_is_sorted(t_list **head);
 // void	ft_big_tri(t_list **head_a, t_list **head_b, t_nbs *nbs, int compteur);
+
+int		ft_check_if_small(t_list **head_a, int rank_b);
+int		ft_check_if_big(t_list **head_a, int rank_b);
+void	ft_reset_ops(t_list **head);
+int		ft_last_rank(t_list **head);
+int		ft_big_a(t_list **head);
+int		ft_small_a(t_list **head);
+t_list	*ft_fill_ops_a(t_list **head_a, t_list *lst1, t_list *lst2);
+void	ft_fill_ops(t_list **head_a, t_list **head_b);
+void	ft_calcul_ops(t_list **head);
+void	ft_algo_new(t_list **head_a, t_list **head_b, t_nbs *nbs);
+void	ft_do_ops(t_list **head, t_list **head_a, t_list **head_b);
+void	ft_exec_ops(t_list **head_a, t_list **head_b);
+
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:39:03 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/25 13:43:56 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/06 16:52:46 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	*ft_reverse_rotate(t_list **lst)
 	t_list	*temp2;
 	t_list	*start;
 
-    if (*lst != NULL || (*lst)->next != NULL)
+    if (*lst != NULL && (*lst)->next != NULL)
     {
 		temp = *lst;
 		temp2 = *lst;
