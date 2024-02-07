@@ -152,7 +152,7 @@ void	ft_reset_ops(t_list **head);
 int		ft_last_rank(t_list **head);
 int		ft_big_a(t_list **head);
 int		ft_small_a(t_list **head);
-t_list	*ft_fill_ops_a(t_list **head_a, t_list *lst1, t_list *lst2);
+void	ft_fill_ops_a(t_list **head_a, t_list *lst1, t_list *lst2);
 void	ft_fill_ops(t_list **head_a, t_list **head_b);
 void	ft_calcul_ops(t_list **head);
 void	ft_algo_new(t_list **head_a, t_list **head_b, t_nbs *nbs);

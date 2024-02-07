@@ -8,8 +8,7 @@ RM = rm -rf
 
 SRCS = srcs/ft_print_piles.c srcs/mod_libft.c srcs/parsing_1_arg.c srcs/parsing.c \
 		srcs/push_function.c srcs/reverse_rotate_functions.c srcs/rotate_functions.c \
-		srcs/swap_functions.c srcs/algo.c srcs/main.c srcs/init.c srcs/algo_utils.c \
-		srcs/algo2.c srcs/algo_new.c
+		srcs/swap_functions.c srcs/algo.c srcs/main.c srcs/init.c srcs/algo_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
