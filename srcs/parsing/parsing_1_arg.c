@@ -6,11 +6,11 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:57:19 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/29 15:24:51 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:38:14 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../../headers/push_swap.h"
 
 void free_split(char **split)
 {
@@ -24,7 +24,7 @@ void free_split(char **split)
     free(split);
 }
 
-int	count_rows(char	**tab)
+int	ft_count_rows(char	**tab)
 {
     int row_count;
 	
@@ -91,7 +91,7 @@ void	*ft_parse_1_arg(char **argv, t_list *head_a)
 	y = 1;
 	pile_a = head_a;
 	split = ft_split(argv[1]);
-	len = count_rows(split);
+	len = ft_count_rows(split);
 	y = 0;
 	while (y < len)
 	{	
@@ -101,7 +101,7 @@ void	*ft_parse_1_arg(char **argv, t_list *head_a)
 			return (NULL);
 		if (y < len - 1)
         {
-            pile_a->next = ft_new_lst();
+            pile_a->next = ft_mod_new_lst();
             pile_a = pile_a->next;
         }
         y++;

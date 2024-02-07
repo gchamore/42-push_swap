@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:35:24 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/25 13:44:10 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:38:19 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 // sb (swap b) : Swap the arg_1 2 elements at the top of the stack b. Does nothing if there is only one or none. 
 // ss : sa and sb at the same time.
 
-#include "../headers/push_swap.h"
+#include "../../headers/push_swap.h"
 
 void	*ft_swap_a(t_list **lst_A)
 {

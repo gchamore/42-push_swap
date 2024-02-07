@@ -6,11 +6,11 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:57:05 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/07 14:42:16 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:37:45 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../../headers/push_swap.h"
 
 int	check_is_smallest(t_list **head_a)
 {
@@ -28,24 +28,6 @@ int	check_is_smallest(t_list **head_a)
 	return (save);
 }
 
-int	ft_is_sorted(t_list **head)
-{
-	t_list *lst;
-	int	small;
-
-	lst = *head;
-	small = check_is_smallest(head);
-	while(lst != NULL)
-	{
-		if (lst->rank != small)
-			return (0);
-		if(lst->rank > lst->next->rank)
-			return (0);
-		lst = lst->next;
-	}
-	return (1);
-}
-
 //compte le nombre d'element de la liste
 int	count_lst(t_list **head)
 {
@@ -61,9 +43,6 @@ int	count_lst(t_list **head)
     }
 	return (count);
 }
-// definie si search se trouve dans la premiere moitiee
-// ou la seconde afin de savoir si il vaut mieux rotate 
-// ou reverse rotate.
 
 // Fonction qui retourne le nombre de place en dessous head ou se trouve search
 int	search_position(t_list **head, int search)
@@ -84,3 +63,72 @@ int	search_position(t_list **head, int search)
 	return (0);
 }
 
+int	ft_check_if_small(t_list **head_a, int rank_b)
+{
+	t_list	*lst;
+
+	lst = *head_a;
+	while (lst != NULL)
+	{
+		if (lst->rank < rank_b)
+			return (0);
+		lst = lst->next;
+	}
+	return (1);
+}
+
+int	ft_check_if_big(t_list **head_a, int rank_b)
+{
+	t_list	*lst;
+
+	lst = *head_a;
+	while (lst != NULL)
+	{
+		if (lst->rank > rank_b)
+			return (0);
+		lst = lst->next;
+	}
+	return (1);
+}
+
+int		ft_last_rank(t_list **head)
+{
+	t_list	*lst;
+
+	lst = *head;
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst->rank);
+}
+
+int	ft_big_a(t_list **head)
+{
+	t_list	*lst;
+	int		save;
+
+	lst = *head;
+	save = lst->rank;
+	while (lst != NULL)
+	{
+		if (lst->rank > save)
+			save = lst->rank;
+		lst = lst->next;
+	}
+	return (save);
+}
+
+int	ft_small_a(t_list **head)
+{
+	t_list	*lst;
+	int		save;
+
+	lst = *head;
+	save = lst->rank;
+	while (lst != NULL)
+	{
+		if (lst->rank < save)
+			save = lst->rank;
+		lst = lst->next;
+	}
+	return (save);
+}

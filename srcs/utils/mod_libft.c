@@ -6,13 +6,13 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:51:17 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/30 10:16:58 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:37:37 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../../headers/push_swap.h"
 
-void ft_free(t_list *lst)
+void ft_mod_free(t_list *lst)
 {
 	t_list *next;
 
@@ -24,7 +24,7 @@ void ft_free(t_list *lst)
     }
 }
 
-long int	ft_atol(const char *str)
+long int	ft_mod_atol(const char *str)
 {
 	int			i;
 	long int	total;
@@ -50,7 +50,7 @@ long int	ft_atol(const char *str)
 	return (total * signe);
 }
 
-void	*ft_lstlast(t_list **lst)
+void	*ft_mod_lstlast(t_list **lst)
 {
 	if (lst)
 	{
@@ -60,7 +60,7 @@ void	*ft_lstlast(t_list **lst)
 	return (NULL);
 }
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_mod_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list *temp;
 
@@ -71,7 +71,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 	else
 	{
-		ft_lstlast(lst);
+		ft_mod_lstlast(lst);
 		(*lst)->next = new;
 		*lst = (*lst)->next;
 		(*lst)->next = NULL;
@@ -79,7 +79,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 }
 
-t_list		*ft_new_lst()
+t_list		*ft_mod_new_lst()
 {
 	t_list	*ptr;
 

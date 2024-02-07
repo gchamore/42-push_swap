@@ -6,11 +6,11 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:17:47 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/25 16:04:08 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:37:14 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../../headers/push_swap.h"
 
 // pa (push a): Takes the arg_1 element on top of b and puts it on a. Does nothing if b is empty. 
 // pb (push b): Takes the arg_1 element on top of a and puts it on b. Does nothing if a is empty. 

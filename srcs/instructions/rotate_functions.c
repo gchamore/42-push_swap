@@ -6,11 +6,11 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 12:53:02 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/26 15:21:21 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:38:22 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../../headers/push_swap.h"
 
 // ra (rotate a): Shifts all the elements of the stack a up by one position. The start element becomes the last. 
 // rb (rotate b) : Shifts all the elements of the stack b one position upwards. The start element becomes the last one. 
@@ -59,7 +59,7 @@ void	*ft_rotate(t_list **lst)
 		next_arg = (*lst)->next;
 		*lst = next_arg;
 		start->next = NULL;
-		ft_lstadd_back(lst, start);
+		ft_mod_lstadd_back(lst, start);
     }
 	else
 		return (NULL);

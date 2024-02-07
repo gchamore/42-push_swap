@@ -6,9 +6,9 @@ CFLAGS = -Wall -Wextra -Werror -g3 -I./includes/
 
 RM = rm -rf
 
-SRCS = srcs/ft_print_piles.c srcs/mod_libft.c srcs/parsing_1_arg.c srcs/parsing.c \
-		srcs/push_function.c srcs/reverse_rotate_functions.c srcs/rotate_functions.c \
-		srcs/swap_functions.c srcs/algo.c srcs/main.c srcs/init.c srcs/algo_utils.c
+SRCS = 	srcs/utils/mod_libft.c srcs/parsing/parsing_1_arg.c srcs/parsing/parsing.c \
+		srcs/instructions/push_function.c srcs/instructions/reverse_rotate_functions.c srcs/instructions/rotate_functions.c \
+		srcs/instructions/swap_functions.c srcs/algo/algo.c srcs/main.c srcs/utils/init.c srcs/utils/algo_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -17,6 +17,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(MAKE) -C ./libft
 	$(CC) $(CFLAGS) -o $@ $^ libft/libft.a
+	$(RM) $(OBJS)
 
 clean:
 	$(MAKE) clean -C ./libft

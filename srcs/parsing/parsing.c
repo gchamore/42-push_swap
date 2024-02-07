@@ -6,11 +6,11 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:42:49 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/29 17:19:47 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:38:02 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../../headers/push_swap.h"
 
 void	ft_ranking(t_list *head_a, t_list *pile_a)
 {
@@ -35,7 +35,7 @@ void	ft_ranking(t_list *head_a, t_list *pile_a)
 	}
 }
 
-int int_check_lst(t_list *lst,long int *search)
+int ft_int_check_lst(t_list *lst,long int *search)
 {
 	int		count;
 	
@@ -59,7 +59,7 @@ void ft_error()
 	write(1, "Error\n", 6);
 }
 
-void	*str_check(char *str)
+void	*ft_str_check(char *str)
 {
 	int		i;
 	
@@ -89,13 +89,13 @@ void	*ft_parse_one_arg(t_list *head_a, t_list *pile_a, char *str)
 	if(!str)
 		return (NULL);
 	len = 0;
-	str = str_check(str);
-	temp_str = ft_strdup(str_check(str));
+	str = ft_str_check(str);
+	temp_str = ft_strdup(ft_str_check(str));
 	if(!temp_str)
 		return (NULL);
-	pile_a->content = ft_atol(temp_str);
+	pile_a->content = ft_mod_atol(temp_str);
 	free(temp_str);
-	if (int_check_lst(head_a,&pile_a->content))
+	if (ft_int_check_lst(head_a,&pile_a->content))
 				return (NULL);
 	return (pile_a);
 }
@@ -116,7 +116,7 @@ void	*ft_parse_a(int argc, char **argv, t_list *head_a)
 			return (NULL);
 		if (y < argc - 1)
         {
-            pile_a->next = ft_new_lst();
+            pile_a->next = ft_mod_new_lst();
 			if(!pile_a->next)
 				return(NULL);
             pile_a = pile_a->next;

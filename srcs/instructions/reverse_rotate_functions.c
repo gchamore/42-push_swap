@@ -6,11 +6,11 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:39:03 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/06 16:52:46 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:38:26 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/push_swap.h"
+#include "../../headers/push_swap.h"
 
 // rra (reverse rotate a): Shifts all elements of the stack down one position. the stack a. The last element becomes the arg_1. 
 // rrb (reverse rotate b): Shifts all the elements of the stack b one position downwards. the stack b. The last element becomes the arg_1. 
