@@ -6,12 +6,13 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:57:05 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/07 15:37:45 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/07 18:47:26 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
+// Retourne la plus petite valeur dans la liste 'head_a'.
 int	check_is_smallest(t_list **head_a)
 {
 	t_list	*lst;
@@ -28,11 +29,11 @@ int	check_is_smallest(t_list **head_a)
 	return (save);
 }
 
-//compte le nombre d'element de la liste
+// Compte le nombre d'éléments dans la liste.
 int	count_lst(t_list **head)
 {
 	t_list	*lst;
-	int count;
+	int		count;
 
 	lst = *head;
 	count = 0;
@@ -44,10 +45,10 @@ int	count_lst(t_list **head)
 	return (count);
 }
 
-// Fonction qui retourne le nombre de place en dessous head ou se trouve search
+// Recherche la position d'une valeur donnée dans la liste.
 int	search_position(t_list **head, int search)
 {
-	int	ct;
+	int		ct;
 	t_list	*lst;
 	
 	lst = *head;
@@ -63,7 +64,9 @@ int	search_position(t_list **head, int search)
 	return (0);
 }
 
-int	ft_check_if_small(t_list **head_a, int rank_b)
+// Vérifie si tous les éléments de la liste 'head_a'
+// sont plus petits que 'rank_b'.
+int	ft_sm(t_list **head_a, int rank_b)
 {
 	t_list	*lst;
 
@@ -77,7 +80,9 @@ int	ft_check_if_small(t_list **head_a, int rank_b)
 	return (1);
 }
 
-int	ft_check_if_big(t_list **head_a, int rank_b)
+// Vérifie si tous les éléments de la liste 'head_a'
+// sont plus grands que 'rank_b'.
+int	ft_bg(t_list **head_a, int rank_b)
 {
 	t_list	*lst;
 
@@ -91,7 +96,8 @@ int	ft_check_if_big(t_list **head_a, int rank_b)
 	return (1);
 }
 
-int		ft_last_rank(t_list **head)
+// Retourne la valeur de rang la plus élevée dans la liste 'head'.
+int	ft_last_rank(t_list **head)
 {
 	t_list	*lst;
 
@@ -101,6 +107,7 @@ int		ft_last_rank(t_list **head)
 	return (lst->rank);
 }
 
+// Retourne la plus grande valeur dans la liste 'head'.
 int	ft_big_a(t_list **head)
 {
 	t_list	*lst;
@@ -117,6 +124,7 @@ int	ft_big_a(t_list **head)
 	return (save);
 }
 
+// Retourne la plus petite valeur dans la liste 'head'.
 int	ft_small_a(t_list **head)
 {
 	t_list	*lst;

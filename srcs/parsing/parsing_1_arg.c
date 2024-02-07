@@ -6,47 +6,47 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:57:19 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/07 15:38:14 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/07 18:57:35 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
-void free_split(char **split)
+void	free_split(char **split)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
-    if (!split) 
-        return;
-    while (split[i] != NULL)
-        free(split[i++]);
-    free(split);
+	if (!split)
+		return ;
+	while (split[i] != NULL)
+		free(split[i++]);
+	free(split);
 }
 
 int	ft_count_rows(char	**tab)
 {
-    int row_count;
-	
+	int	row_count;
+
 	row_count = 0;
-    while (tab[row_count] != NULL) 
+	while (tab[row_count] != NULL)
 	{
-        row_count++;
-    }
-    return row_count;
+		row_count++;
+	}
+	return (row_count);
 }
 
 void	*verif_str(char **split, char *str, int i)
 {
-	int row;
-	int collum;
-	
+	int	row;
+	int	collum;
+
 	row = 0;
 	while (str[i])
 	{
 		collum = 0;
 		split[row] = (char *)malloc(sizeof(char) * 4096);
-		if(!split[row])
+		if (!split[row])
 			return (NULL);
 		while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
 		{
@@ -65,27 +65,27 @@ void	*verif_str(char **split, char *str, int i)
 
 char	**ft_split(char *str)
 {
-	int i;
-	char **split;
+	int		i;
+	char	**split;
 
 	i = 0;
 	split = (char **)malloc(sizeof(char *) * 256);
-	if(!split)
+	if (!split)
 		return (NULL);
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
 		i++;
 	split = verif_str(split, str, i);
-	if(!split)
+	if (!split)
 		return (free(split), NULL);
 	return (split);
 }
 
 void	*ft_parse_1_arg(char **argv, t_list *head_a)
 {
-	int y;
-	char *str;
+	int		y;
+	char	*str;
 	t_list	*pile_a;
-	int	len;
+	int		len;
 	char	**split;
 
 	y = 1;
@@ -97,14 +97,14 @@ void	*ft_parse_1_arg(char **argv, t_list *head_a)
 	{	
 		str = split[y];
 		pile_a = ft_parse_one_arg(head_a, pile_a, str);
-		if(!pile_a)
+		if (!pile_a)
 			return (NULL);
 		if (y < len - 1)
-        {
-            pile_a->next = ft_mod_new_lst();
-            pile_a = pile_a->next;
-        }
-        y++;
+		{
+			pile_a->next = ft_mod_new_lst();
+			pile_a = pile_a->next;
+		}
+		y++;
 	}
 	return (ft_ranking(head_a, pile_a), free_split(split), head_a);
 }

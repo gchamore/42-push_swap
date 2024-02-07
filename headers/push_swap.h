@@ -133,6 +133,7 @@ void	ft_reset_ops(t_list **head);
 void	ft_fill_ops(t_list **head_a, t_list **head_b);
 void	ft_fill_ops_a(t_list **head_a, t_list *lst1, t_list *lst2);
 void	ft_calcul_ops(t_list **head);
+void	ft_calcul_ops_2(t_list *lst);
 void	ft_exec_ops(t_list **head_a, t_list **head_b);
 void	ft_do_ops(t_list **head, t_list **head_a, t_list **head_b);
 
@@ -148,8 +149,8 @@ int		count_rank(t_list	**head);
 int		count_lst(t_list **head);
 int		search_position(t_list **head, int search);
 int		check_is_smallest(t_list **head_a);
-int		ft_check_if_small(t_list **head_a, int rank_b);
-int		ft_check_if_big(t_list **head_a, int rank_b);
+int		ft_sm(t_list **head_a, int rank_b);
+int		ft_bg(t_list **head_a, int rank_b);
 int		ft_last_rank(t_list **head);
 int		ft_big_a(t_list **head);
 int		ft_small_a(t_list **head);
