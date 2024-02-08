@@ -6,6 +6,7 @@
 		"algorithm": "c",
 		"push_swap.h": "c",
 		"regex": "c",
-		"variant": "c"
+		"variant": "c",
+		"stdio.h": "c"
 	}
 }

@@ -6,12 +6,14 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:57:19 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/07 18:57:35 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/08 11:13:58 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
+// Libère la mémoire allouée pour un tableau de chaînes de
+// caractères et pour les chaînes de caractères elles-mêmes.
 void	free_split(char **split)
 {
 	int	i;
@@ -24,6 +26,7 @@ void	free_split(char **split)
 	free(split);
 }
 
+// Compte le nombre de lignes dans un tableau de chaînes de caractères.
 int	ft_count_rows(char	**tab)
 {
 	int	row_count;
@@ -36,6 +39,8 @@ int	ft_count_rows(char	**tab)
 	return (row_count);
 }
 
+// Vérifie et découpe une chaîne de caractères 'str' en sous-chaînes
+// en fonction des espaces, des tabulations et des sauts de ligne.
 void	*verif_str(char **split, char *str, int i)
 {
 	int	row;
@@ -63,6 +68,8 @@ void	*verif_str(char **split, char *str, int i)
 	return (split);
 }
 
+// Découpe une chaîne de caractères en sous-chaînes en fonction
+// des espaces, des tabulations et des sauts de ligne.
 char	**ft_split(char *str)
 {
 	int		i;
@@ -80,6 +87,8 @@ char	**ft_split(char *str)
 	return (split);
 }
 
+// Analyse un seul argument et l'ajoute à la liste 'head_a', en
+// le découpant en sous-chaînes si nécessaire.
 void	*ft_parse_1_arg(char **argv, t_list *head_a)
 {
 	int		y;

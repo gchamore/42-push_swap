@@ -6,12 +6,14 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:42:49 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/07 19:03:13 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/08 11:14:34 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
+// Attribue un rang à chaque élément de la liste 'head_a' en
+// fonction de sa valeur par rapport aux autres éléments.
 void	ft_ranking(t_list *head_a, t_list *pile_a)
 {
 	t_list	*lst;
@@ -35,6 +37,8 @@ void	ft_ranking(t_list *head_a, t_list *pile_a)
 	}
 }
 
+// Vérifie si la liste contient des doublons ou des valeurs
+// qui dépassent la plage d'un entier signé 32 bits.
 int	ft_int_check_lst(t_list *lst, long int *search)
 {
 	int	count;
@@ -55,11 +59,8 @@ int	ft_int_check_lst(t_list *lst, long int *search)
 	return (0);
 }
 
-void	ft_error(void)
-{
-	write(1, "Error\n", 6);
-}
-
+// Vérifie la validité de la chaîne de caractères 'str' et la
+// convertit en un pointeur sur char si elle est valide.
 void	*ft_str_check(char *str)
 {
 	int	i;
@@ -81,6 +82,8 @@ void	*ft_str_check(char *str)
 	return (str);
 }
 
+// Convertit la chaîne de caractères 'str' en un élément de la
+// liste 'pile_a' et vérifie sa validité.
 void	*ft_parse_one_arg(t_list *head_a, t_list *pile_a, char *str)
 {
 	char	*temp_str;
@@ -100,6 +103,8 @@ void	*ft_parse_one_arg(t_list *head_a, t_list *pile_a, char *str)
 	return (pile_a);
 }
 
+// Analyse les arguments passés en entrée et les convertit en éléments
+// de la liste 'head_a'.
 void	*ft_parse_a(int argc, char **argv, t_list *head_a)
 {
 	int		y;

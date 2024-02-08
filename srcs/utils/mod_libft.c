@@ -6,22 +6,22 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:51:17 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/07 15:37:37 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/08 11:09:46 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
-void ft_mod_free(t_list *lst)
+void	ft_mod_free(t_list *lst)
 {
-	t_list *next;
+	t_list	*next;
 
-    while (lst != NULL)
-    {
-        next = lst->next;
-        free(lst);
-        lst = next;
-    }
+	while (lst != NULL)
+	{
+		next = lst->next;
+		free(lst);
+		lst = next;
+	}
 }
 
 long int	ft_mod_atol(const char *str)
@@ -62,7 +62,7 @@ void	*ft_mod_lstlast(t_list **lst)
 
 void	ft_mod_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = *lst;
 	if (!new)
@@ -79,7 +79,7 @@ void	ft_mod_lstadd_back(t_list **lst, t_list *new)
 	}
 }
 
-t_list		*ft_mod_new_lst()
+t_list	*ft_mod_new_lst(void)
 {
 	t_list	*ptr;
 
