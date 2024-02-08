@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:36:25 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/08 10:50:56 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/08 14:37:26 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 		else
 			head_a = ft_parse_a(argc, argv, head_a);
 		if (!head_a)
-			return (ft_mod_free(head_a), ft_error(), 0);
+			return (ft_error(), 0);
 		ft_algo(&head_a, &head_b, &nbs);
 	}
 	ft_mod_free(head_a);

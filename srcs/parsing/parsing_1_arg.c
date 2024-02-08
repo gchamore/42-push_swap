@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:57:19 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/08 11:13:58 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:37:32 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,15 @@ void	free_split(char **split)
 	int	i;
 
 	i = 0;
-	if (!split)
-		return ;
-	while (split[i] != NULL)
-		free(split[i++]);
-	free(split);
+	if (split)
+	{
+		while (split[i] != NULL)
+		{
+			free(split[i]);
+			i++;
+		}
+		free(split);
+	}
 }
 
 // Compte le nombre de lignes dans un tableau de chaînes de caractères.
@@ -41,26 +45,26 @@ int	ft_count_rows(char	**tab)
 
 // Vérifie et découpe une chaîne de caractères 'str' en sous-chaînes
 // en fonction des espaces, des tabulations et des sauts de ligne.
-void	*verif_str(char **split, char *str, int i)
+void	*verif_str(char **split, char *str)
 {
 	int	row;
 	int	collum;
 
 	row = 0;
-	while (str[i])
+	while (*str)
 	{
 		collum = 0;
-		split[row] = (char *)malloc(sizeof(char) * 4096);
+		split[row] = (char *)malloc(sizeof(char) * (ft_one_word_len(str) + 1));
 		if (!split[row])
 			return (NULL);
-		while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
+		while (*str && !ft_is_delimiter(*str))
 		{
-			split[row][collum] = str[i];
-			i++;
+			split[row][collum] = *str;
+			str++;
 			collum++;
 		}
-		while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
-			i++;
+		while (*str && ft_is_delimiter(*str))
+			str++;
 		split[row][collum] = '\0';
 		row++;
 	}
@@ -76,12 +80,12 @@ char	**ft_split(char *str)
 	char	**split;
 
 	i = 0;
-	split = (char **)malloc(sizeof(char *) * 256);
+	split = (char **)malloc(sizeof(char *) * (ft_words_count(str) + 1));
 	if (!split)
 		return (NULL);
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
-		i++;
-	split = verif_str(split, str, i);
+	while (ft_is_delimiter(*str))
+		str++;
+	split = verif_str(split, str);
 	if (!split)
 		return (free(split), NULL);
 	return (split);
@@ -97,17 +101,16 @@ void	*ft_parse_1_arg(char **argv, t_list *head_a)
 	int		len;
 	char	**split;
 
-	y = 1;
 	pile_a = head_a;
 	split = ft_split(argv[1]);
 	len = ft_count_rows(split);
 	y = 0;
 	while (y < len)
-	{	
+	{
 		str = split[y];
 		pile_a = ft_parse_one_arg(head_a, pile_a, str);
 		if (!pile_a)
-			return (NULL);
+			return (free_split(split), NULL);
 		if (y < len - 1)
 		{
 			pile_a->next = ft_mod_new_lst();

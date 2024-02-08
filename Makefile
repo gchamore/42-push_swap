@@ -10,7 +10,8 @@ SRCS = 	srcs/utils/mod_libft.c srcs/parsing/parsing_1_arg.c srcs/parsing/parsing
 		srcs/instructions/push_function.c srcs/instructions/reverse_rotate_functions.c \
 		srcs/instructions/rotate_functions.c srcs/instructions/swap_functions.c \
 		srcs/algo/algo_1.c srcs/algo/algo_2.c srcs/algo/algo_3.c srcs/main.c \
-		srcs/utils/init.c srcs/utils/algo_utils.c srcs/utils/algo_utils_2.c
+		srcs/utils/init.c srcs/utils/algo_utils.c srcs/utils/algo_utils_2.c \
+		srcs/utils/parsing_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -19,7 +20,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(MAKE) -C ./libft
 	$(CC) $(CFLAGS) -o $@ $^ libft/libft.a
-	$(RM) $(OBJS)
 
 clean:
 	$(MAKE) clean -C ./libft

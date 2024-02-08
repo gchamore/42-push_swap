@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:22:27 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/08 10:24:24 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/08 11:38:41 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,5 @@ int	ft_small_a(t_list **head)
 
 void	ft_error(void)
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 }

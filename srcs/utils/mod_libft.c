@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:51:17 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/08 11:09:46 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:19:48 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@ void	ft_mod_free(t_list *lst)
 {
 	t_list	*next;
 
-	while (lst != NULL)
+	if (lst)
 	{
-		next = lst->next;
-		free(lst);
-		lst = next;
+		while (lst != NULL)
+		{
+			next = lst->next;
+			free(lst);
+			lst = next;
+		}
 	}
 }
 

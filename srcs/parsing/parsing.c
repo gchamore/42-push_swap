@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:42:49 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/08 11:14:34 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:21:41 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,20 +86,17 @@ void	*ft_str_check(char *str)
 // liste 'pile_a' et vérifie sa validité.
 void	*ft_parse_one_arg(t_list *head_a, t_list *pile_a, char *str)
 {
-	char	*temp_str;
 	int		len;
 
 	if (!str)
-		return (NULL);
+		return (ft_mod_free(head_a), NULL);
 	len = 0;
 	str = ft_str_check(str);
-	temp_str = ft_strdup(ft_str_check(str));
-	if (!temp_str)
-		return (NULL);
-	pile_a->content = ft_mod_atol(temp_str);
-	free(temp_str);
+	if (!str)
+		return (ft_mod_free(head_a), NULL);
+	pile_a->content = ft_mod_atol(str);
 	if (ft_int_check_lst(head_a, &pile_a->content))
-		return (NULL);
+		return (ft_mod_free(head_a), NULL);
 	return (pile_a);
 }
 

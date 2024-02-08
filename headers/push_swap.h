@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:52:01 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/08 11:17:48 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:10:04 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,9 @@ int			ft_count_rows(char **tab);
 void		ft_free_split(char **split);
 char		**ft_split(char *str);
 void		*ft_verif_str(char **split, char *str, int i);
+int			ft_is_delimiter(char c);
+int			ft_words_count(char *str);
+int			ft_one_word_len(char *str);
 
 //#################################
 //#	     		ERROR 			  #
