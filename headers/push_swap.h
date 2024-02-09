@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:52:01 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/08 18:10:04 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/09 16:07:13 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,12 @@ typedef struct s_nbs
 //#			   LIBFT	     	  #
 //#################################
 
-size_t		ft_strlen(const char *s);
-char		*ft_strdup(const char *str1);
+size_t		ft_strlen(char *s);
+char		*ft_strdup(char *str1);
 int			ft_lstsize(t_list *lst);
 int			ft_printf(const char *str, ...);
+char		*ft_get_next_line(int fd);
+int			ft_strncmp(const char *str1, const char *str2, size_t len);
 
 //#################################
 //#			  Mod LIBFT  		  #
@@ -80,7 +82,7 @@ void		*ft_parse_1_arg(char **split, t_list *head_a);
 int			ft_count_rows(char **tab);
 void		ft_free_split(char **split);
 char		**ft_split(char *str);
-void		*ft_verif_str(char **split, char *str, int i);
+void		*ft_verif_str(char **split, char *str);
 int			ft_is_delimiter(char c);
 int			ft_words_count(char *str);
 int			ft_one_word_len(char *str);
@@ -153,10 +155,9 @@ void		ft_putsmallest_up(t_list **head);
 
 void		*ft_init_struct(t_nbs *nbs, t_list **head_a, t_list **head_b);
 void		ft_fill_struct(t_list **head, t_nbs *nbs);
-int			count_rank(t_list	**head);
-int			count_lst(t_list **head);
-int			search_position(t_list **head, int search);
-int			check_is_smallest(t_list **head_a);
+int			ft_count_lst(t_list **head);
+int			ft_search_position(t_list **head, int search);
+int			ft_check_is_smallest(t_list **head_a);
 int			ft_sm(t_list **head_a, int rank_b);
 int			ft_bg(t_list **head_a, int rank_b);
 int			ft_last_rank(t_list **head);
@@ -168,5 +169,17 @@ int			ft_check_one_and_last(t_list **head_a, t_list *lst1, \
 			t_list *lst2, int temp);
 void		ft_check_rank_and_next(t_list **head_a, t_list *lst1, \
 			t_list *lst2, int temp);
+
+//#################################
+//#	    	   CHECKER	      #
+//#################################
+
+int			ft_do_swp_and_psh(t_list **head_a, t_list **head_b, \
+			char *instruction);
+int			ft_do_rot_and_revrot(t_list **head_a, t_list **head_b, \
+			char *instruction);
+int			ft_do_instructions(t_list **head_a, t_list **head_b, \
+			char *instruction);
+int			verif_instructions(t_list **head_a, t_list **head_b);
 
 #endif

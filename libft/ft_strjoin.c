@@ -6,59 +6,30 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:28:52 by gchamore          #+#    #+#             */
-/*   Updated: 2023/11/17 11:42:01 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/09 11:58:38 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_strcat(char *dest, const char *src)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	int	i;
-	int	dest_len;
+	char			*str;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	if (!dest || !src)
-		return (NULL);
-	dest_len = ft_strlen(dest);
-	while (src[i] != '\0')
-	{
-		dest[dest_len + i] = src[i];
-		i++;
-	}
-	dest[dest_len + i] = '\0';
-	return (dest);
-}
-
-static char	*ft_strcpy(char *dest, const char *src)
-{
-	int	i;
-
-	i = 0;
-	if (!dest || !src)
-		return (NULL);
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*str;
-	int		len;
-
-	if (!s1 || !s2)
-		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	str = (char *)malloc((len + 1) * sizeof(char));
+	j = 0;
+	str = (char *) malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!str)
-		return (NULL);
-	ft_strcpy(str, s1);
-	ft_strcat(str, s2);
+		return (free (s1), NULL);
+	while (s1[j])
+		str[i++] = s1[j++];
+	j = 0;
+	while (s2[j])
+		str[i++] = s2[j++];
+	str[i] = '\0';
+	free(s1);
 	return (str);
 }
 

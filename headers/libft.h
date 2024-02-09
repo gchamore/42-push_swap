@@ -6,17 +6,21 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 11:00:30 by gchamore          #+#    #+#             */
-/*   Updated: 2024/01/15 12:14:12 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/09 13:22:14 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 50
+# endif
 
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
 # include <stdarg.h>
+# include <fcntl.h>
 
 typedef struct s_list
 {
@@ -46,9 +50,9 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 int				ft_atoi(const char *str);
 void			*ft_calloc(size_t count, size_t size);
-char			*ft_strdup(const char *s1);
-char			*ft_substr(char const *s, unsigned int start, size_t len);
-char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strdup(char *str1);
+char			*ft_substr(char *s, unsigned int start, size_t len);
+char			*ft_strjoin(char *s1, char *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
@@ -80,5 +84,6 @@ int				ft_print_char(int c);
 int				ft_put_hexa(unsigned int num, const char format);
 int				ft_put_ptr(unsigned long ptr);
 int				ft_putnbr(unsigned int nbr);
+char			*ft_get_next_line(int fd);
 
 #endif

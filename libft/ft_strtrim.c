@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 17:10:49 by gchamore          #+#    #+#             */
-/*   Updated: 2023/11/21 11:35:24 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/09 13:25:04 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (i >= j)
 		return (ft_strdup(""));
 	substr_len = j - i - 1;
-	return (ft_substr(s1, i, substr_len));
+	return (ft_substr((char *)s1, i, substr_len));
 }
 
 //	La fonction ft_strtrim prend une chaîne de caractères
