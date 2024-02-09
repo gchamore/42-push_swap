@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:57:19 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/08 18:37:32 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/09 12:56:52 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // Libère la mémoire allouée pour un tableau de chaînes de
 // caractères et pour les chaînes de caractères elles-mêmes.
-void	free_split(char **split)
+void	ft_free_split(char **split)
 {
 	int	i;
 
@@ -45,7 +45,7 @@ int	ft_count_rows(char	**tab)
 
 // Vérifie et découpe une chaîne de caractères 'str' en sous-chaînes
 // en fonction des espaces, des tabulations et des sauts de ligne.
-void	*verif_str(char **split, char *str)
+void	*ft_verif_str(char **split, char *str)
 {
 	int	row;
 	int	collum;
@@ -85,7 +85,7 @@ char	**ft_split(char *str)
 		return (NULL);
 	while (ft_is_delimiter(*str))
 		str++;
-	split = verif_str(split, str);
+	split = ft_verif_str(split, str);
 	if (!split)
 		return (free(split), NULL);
 	return (split);
@@ -110,7 +110,7 @@ void	*ft_parse_1_arg(char **argv, t_list *head_a)
 		str = split[y];
 		pile_a = ft_parse_one_arg(head_a, pile_a, str);
 		if (!pile_a)
-			return (free_split(split), NULL);
+			return (ft_free_split(split), NULL);
 		if (y < len - 1)
 		{
 			pile_a->next = ft_mod_new_lst();
@@ -118,5 +118,5 @@ void	*ft_parse_1_arg(char **argv, t_list *head_a)
 		}
 		y++;
 	}
-	return (ft_ranking(head_a, pile_a), free_split(split), head_a);
+	return (ft_ranking(head_a, pile_a), ft_free_split(split), head_a);
 }

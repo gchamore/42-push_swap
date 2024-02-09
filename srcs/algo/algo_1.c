@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:14:52 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/08 11:01:45 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/09 16:07:44 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ int	ft_is_sorted(t_list **head)
 	int		small;
 
 	lst = *head;
-	small = check_is_smallest(head);
+	small = ft_check_is_smallest(head);
+	if (lst->rank != small)
+		return (0);
 	while (lst != NULL)
 	{
 		if (lst->rank != small)
@@ -71,7 +73,7 @@ void	ft_algo_pre_tri(t_list **head_a, t_list **head_b, t_nbs *nbs)
 			ft_rotate_a(head_a);
 		check--;
 	}
-	ct = count_lst(head_a);
+	ct = ft_count_lst(head_a);
 	while (*head_a != NULL && ct-- > 3 && nbs->count > 3)
 		ft_push_b(head_a, head_b);
 	ft_tri_three_a(head_a);
@@ -110,7 +112,7 @@ void	ft_putsmallest_up(t_list **head)
 
 	lst = *head;
 	ct = lst->rank;
-	middle = count_lst(head) / 2;
+	middle = ft_count_lst(head) / 2;
 	while (lst != NULL)
 	{
 		if (lst->rank < ct)
@@ -119,7 +121,7 @@ void	ft_putsmallest_up(t_list **head)
 	}
 	while ((*head)->rank != ct)
 	{
-		if (search_position(head, ct) > middle)
+		if (ft_search_position(head, ct) > middle)
 			ft_reverse_rotate_a(head);
 		else
 			ft_rotate_a(head);

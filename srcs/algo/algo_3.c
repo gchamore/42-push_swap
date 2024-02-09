@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:27:50 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/08 10:45:29 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/09 12:59:50 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,12 @@ int	ft_bg2(t_list **head_a, t_list *lst1, t_list *lst2, int temp)
 	int	index;
 	int	middle;
 
-	middle = count_lst(head_a) / 2;
-	index = search_position(head_a, lst1->rank);
+	middle = ft_count_lst(head_a) / 2;
+	index = ft_search_position(head_a, lst1->rank);
 	if (lst1->rank == ft_big_a(head_a))
 	{
 		if (index > middle)
-			lst2->rra += count_lst(head_a) - temp;
+			lst2->rra += ft_count_lst(head_a) - temp;
 		else
 			lst2->ra += index;
 		return (1);
@@ -70,12 +70,12 @@ int	ft_sm2(t_list **head_a, t_list *lst1, t_list *lst2, int temp)
 	int	index;
 	int	middle;
 
-	middle = count_lst(head_a) / 2;
-	index = search_position(head_a, lst1->rank);
+	middle = ft_count_lst(head_a) / 2;
+	index = ft_search_position(head_a, lst1->rank);
 	if (lst1->rank == ft_small_a(head_a))
 	{
 		if (index > middle)
-			lst2->rra += count_lst(head_a) - temp + 1;
+			lst2->rra += ft_count_lst(head_a) - temp + 1;
 		else
 			lst2->ra += index - 1;
 		return (1);
@@ -90,12 +90,12 @@ int	ft_check_one_and_last(t_list **head_a, t_list *lst1, t_list *lst2, int temp)
 	int	index;
 	int	middle;
 
-	middle = count_lst(head_a) / 2;
-	index = search_position(head_a, lst1->rank);
+	middle = ft_count_lst(head_a) / 2;
+	index = ft_search_position(head_a, lst1->rank);
 	if (lst2->rank < (*head_a)->rank && lst2->rank > ft_last_rank(head_a))
 	{
 		if (index > middle)
-			lst2->rra += count_lst(head_a) - temp;
+			lst2->rra += ft_count_lst(head_a) - temp;
 		else
 			lst2->ra += index - 1;
 		return (1);
@@ -111,10 +111,10 @@ t_list *lst2, int temp)
 	int	index;
 	int	middle;
 
-	middle = count_lst(head_a) / 2;
-	index = search_position(head_a, lst1->rank);
+	middle = ft_count_lst(head_a) / 2;
+	index = ft_search_position(head_a, lst1->rank);
 	if (index > middle)
-		lst2->rra += count_lst(head_a) - temp;
+		lst2->rra += ft_count_lst(head_a) - temp;
 	else
 		lst2->ra += index;
 }

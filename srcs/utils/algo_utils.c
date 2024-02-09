@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:57:05 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/08 10:27:32 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/09 12:11:37 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_calcul_ops_2(t_list *lst)
 }
 
 // Retourne la plus petite valeur dans la liste 'head_a'.
-int	check_is_smallest(t_list **head_a)
+int	ft_check_is_smallest(t_list **head_a)
 {
 	t_list	*lst;
 	int		save;
@@ -45,7 +45,7 @@ int	check_is_smallest(t_list **head_a)
 }
 
 // Compte le nombre d'éléments dans la liste.
-int	count_lst(t_list **head)
+int	ft_count_lst(t_list **head)
 {
 	t_list	*lst;
 	int		count;
@@ -61,7 +61,7 @@ int	count_lst(t_list **head)
 }
 
 // Recherche la position d'une valeur donnée dans la liste.
-int	search_position(t_list **head, int search)
+int	ft_search_position(t_list **head, int search)
 {
 	int		ct;
 	t_list	*lst;

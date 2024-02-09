@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:27:47 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/08 10:30:17 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/09 12:58:56 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,16 @@ void	ft_fill_ops(t_list **head_a, t_list **head_b)
 	lst1 = *head_a;
 	lst2 = *head_b;
 	temp = 1;
-	middle = count_lst(head_b) / 2;
+	middle = ft_count_lst(head_b) / 2;
 	while (lst2 != NULL)
 	{
 		lst1 = *head_a;
 		ft_fill_ops_a(head_a, lst1, lst2);
-		index = search_position(head_b, lst2->rank);
+		index = ft_search_position(head_b, lst2->rank);
 		if ((*head_b)->next != NULL)
 		{
 			if (index > middle)
-				lst2->rrb = count_lst(head_b) - temp + 1;
+				lst2->rrb = ft_count_lst(head_b) - temp + 1;
 			else
 				lst2->rb = index - 1;
 		}

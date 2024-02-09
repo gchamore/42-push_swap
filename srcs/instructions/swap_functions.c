@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:35:24 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/07 18:54:22 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/09 15:06:10 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	*ft_swap(t_list **lst)
 	t_list	*arg_1;
 	t_list	*arg_2;
 
-	if (*lst != NULL || (*lst)->next != NULL)
+	if (*lst != NULL && (*lst)->next != NULL)
 	{
 		arg_1 = *lst;
 		arg_2 = (*lst)->next;
