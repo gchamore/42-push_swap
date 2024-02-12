@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:52:01 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/09 16:07:13 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/12 12:44:49 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,17 +169,5 @@ int			ft_check_one_and_last(t_list **head_a, t_list *lst1, \
 			t_list *lst2, int temp);
 void		ft_check_rank_and_next(t_list **head_a, t_list *lst1, \
 			t_list *lst2, int temp);
-
-//#################################
-//#	    	   CHECKER	      #
-//#################################
-
-int			ft_do_swp_and_psh(t_list **head_a, t_list **head_b, \
-			char *instruction);
-int			ft_do_rot_and_revrot(t_list **head_a, t_list **head_b, \
-			char *instruction);
-int			ft_do_instructions(t_list **head_a, t_list **head_b, \
-			char *instruction);
-int			verif_instructions(t_list **head_a, t_list **head_b);
 
 #endif

@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/12 09:47:40 by gchamore          #+#    #+#              #
-#    Updated: 2024/02/12 09:47:41 by gchamore         ###   ########.fr        #
+#    Created: 2024/02/12 09:49:54 by gchamore          #+#    #+#              #
+#    Updated: 2024/02/12 15:12:41 by gchamore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CHECKER_NAME = checker
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -g3 -I./includes/
+CFLAGS = -Wall -Wextra -Werror -g3 -I./headers/
 
 RM = rm -rf
 
@@ -27,27 +27,29 @@ SRCS_SHARE = srcs/utils/mod_libft.c srcs/parsing/parsing_1_arg.c srcs/parsing/pa
 		srcs/utils/init.c srcs/utils/algo_utils.c srcs/utils/algo_utils_2.c \
 		srcs/utils/parsing_utils.c
 
-SRCS_PUSW += $(SRCS_SHARE) srcs/main.c
+SRCS += $(SRCS_SHARE) srcs/main.c
 
-SRCS_CHECKER += $(SRCS_SHARE) my_checker/checker.c
+SRCS_BONUS += $(SRCS_SHARE) my_checker/checker_bonus.c
 
+OBJS = $(SRCS:.c=.o)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
-OBJS_PUSW = $(SRCS_PUSW:.c=.o)
-OBJS_CHECKER = $(SRCS_CHECKER:.c=.o)
+all: first_header $(NAME) second_header
 
-all: first_header $(NAME) $(CHECKER_NAME) second_header
+bonus:	$(CHECKER_NAME)
 
-$(NAME): $(OBJS_PUSW)
+$(NAME): $(OBJS)
 	$(MAKE) -C ./libft
 	$(CC) $(CFLAGS) -o $@ $^ libft/libft.a
 
-$(CHECKER_NAME): $(OBJS_CHECKER)
+$(CHECKER_NAME): $(OBJS_BONUS)
 	$(MAKE) -C ./libft
 	$(CC) $(CFLAGS) -o $@ $^ libft/libft.a
+
 
 clean:
 	$(MAKE) clean -C ./libft
-	$(RM) $(OBJS_PUSW) $(OBJS_CHECKER)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	$(MAKE) fclean -C ./libft
@@ -56,6 +58,8 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+
 
 info: header
 
