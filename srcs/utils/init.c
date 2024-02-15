@@ -6,15 +6,15 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 13:03:48 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/08 10:15:26 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:29:11 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
-void	ft_fill_struct(t_list **head, t_nbs *nbs)
+void	ft_fill_struct(t_list2 **head, t_nbs *nbs)
 {
-	t_list	*lst;
+	t_list2	*lst;
 
 	lst = *head;
 	nbs->count = 0;
@@ -27,7 +27,7 @@ void	ft_fill_struct(t_list **head, t_nbs *nbs)
 	nbs->div2 = ((nbs->count / 3) * 2);
 }
 
-void	*ft_init_struct(t_nbs *nbs, t_list **head_a, t_list **head_b)
+void	*ft_init_struct(t_nbs *nbs, t_list2 **head_a, t_list2 **head_b)
 {
 	nbs->count = 0;
 	nbs->div1 = 0;

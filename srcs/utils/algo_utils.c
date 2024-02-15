@@ -6,14 +6,14 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:57:05 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/09 12:11:37 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:29:06 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
 // Calcule les opérations totales pour chaque élément de la liste.
-void	ft_calcul_ops_2(t_list *lst)
+void	ft_calcul_ops_2(t_list2 *lst)
 {
 	while (lst->ra > 0 && lst->rra > 0)
 	{
@@ -28,9 +28,9 @@ void	ft_calcul_ops_2(t_list *lst)
 }
 
 // Retourne la plus petite valeur dans la liste 'head_a'.
-int	ft_check_is_smallest(t_list **head_a)
+int	ft_check_is_smallest(t_list2 **head_a)
 {
-	t_list	*lst;
+	t_list2	*lst;
 	int		save;
 
 	lst = *head_a;
@@ -45,9 +45,9 @@ int	ft_check_is_smallest(t_list **head_a)
 }
 
 // Compte le nombre d'éléments dans la liste.
-int	ft_count_lst(t_list **head)
+int	ft_count_lst(t_list2 **head)
 {
-	t_list	*lst;
+	t_list2	*lst;
 	int		count;
 
 	lst = *head;
@@ -61,10 +61,10 @@ int	ft_count_lst(t_list **head)
 }
 
 // Recherche la position d'une valeur donnée dans la liste.
-int	ft_search_position(t_list **head, int search)
+int	ft_search_position(t_list2 **head, int search)
 {
 	int		ct;
-	t_list	*lst;
+	t_list2	*lst;
 
 	lst = *head;
 	ct = 1;
@@ -80,9 +80,9 @@ int	ft_search_position(t_list **head, int search)
 }
 
 // Retourne la valeur de rang la plus élevée dans la liste 'head'.
-int	ft_last_rank(t_list **head)
+int	ft_last_rank(t_list2 **head)
 {
-	t_list	*lst;
+	t_list2	*lst;
 
 	lst = *head;
 	while (lst->next != NULL)

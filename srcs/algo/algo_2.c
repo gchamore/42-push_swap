@@ -6,16 +6,16 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:27:47 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/09 12:58:56 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:30:21 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
 // Réinitialise les opérations associées aux éléments de la liste.
-void	ft_reset_ops(t_list **head)
+void	ft_reset_ops(t_list2 **head)
 {
-	t_list	*lst;
+	t_list2	*lst;
 
 	lst = *head;
 	while (lst != NULL)
@@ -33,10 +33,10 @@ void	ft_reset_ops(t_list **head)
 }
 
 // Remplit les opérations associées aux éléments de la liste 'head_b'.
-void	ft_fill_ops(t_list **head_a, t_list **head_b)
+void	ft_fill_ops(t_list2 **head_a, t_list2 **head_b)
 {
-	t_list	*lst1;
-	t_list	*lst2;
+	t_list2	*lst1;
+	t_list2	*lst2;
 	int		index;
 	int		middle;
 	int		temp;
@@ -63,9 +63,9 @@ void	ft_fill_ops(t_list **head_a, t_list **head_b)
 }
 
 // Calcule les opérations totales pour chaque élément de la liste.
-void	ft_calcul_ops(t_list **head)
+void	ft_calcul_ops(t_list2 **head)
 {
-	t_list	*lst;
+	t_list2	*lst;
 
 	lst = *head;
 	while (lst != NULL)
@@ -90,10 +90,10 @@ void	ft_calcul_ops(t_list **head)
 }
 
 // Exécute les opérations avec le moins de mouvements totaux possibles.
-void	ft_exec_ops(t_list **head_a, t_list **head_b)
+void	ft_exec_ops(t_list2 **head_a, t_list2 **head_b)
 {
-	t_list	*lst;
-	t_list	*save;
+	t_list2	*lst;
+	t_list2	*save;
 
 	lst = *head_b;
 	save = lst;
@@ -107,9 +107,9 @@ void	ft_exec_ops(t_list **head_a, t_list **head_b)
 }
 
 // Effectue les opérations spécifiées sur les listes 'head_a' et 'head_b'.
-void	ft_do_ops(t_list **head, t_list **head_a, t_list **head_b)
+void	ft_do_ops(t_list2 **head, t_list2 **head_a, t_list2 **head_b)
 {
-	t_list	*lst;
+	t_list2	*lst;
 
 	lst = *head;
 	while (lst->rr-- > 0)

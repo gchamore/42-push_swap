@@ -6,13 +6,13 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 15:39:03 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/07 18:52:22 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:29:56 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
-void	*ft_reverse_rotate_a(t_list **lst_A)
+void	*ft_reverse_rotate_a(t_list2 **lst_A)
 {
 	if (!lst_A)
 		return (NULL);
@@ -22,7 +22,7 @@ void	*ft_reverse_rotate_a(t_list **lst_A)
 	return (NULL);
 }
 
-void	*ft_reverse_rotate_b(t_list **lst_B)
+void	*ft_reverse_rotate_b(t_list2 **lst_B)
 {
 	if (!lst_B)
 		return (NULL);
@@ -32,7 +32,7 @@ void	*ft_reverse_rotate_b(t_list **lst_B)
 	return (NULL);
 }
 
-void	*ft_reverse_rotate_ab(t_list **lst1, t_list **lst2)
+void	*ft_reverse_rotate_ab(t_list2 **lst1, t_list2 **lst2)
 {
 	if (!lst1 || !lst2)
 		return (NULL);
@@ -44,11 +44,11 @@ void	*ft_reverse_rotate_ab(t_list **lst1, t_list **lst2)
 	return (NULL);
 }
 
-void	*ft_reverse_rotate(t_list **lst)
+void	*ft_reverse_rotate(t_list2 **lst)
 {
-	t_list	*temp;
-	t_list	*temp2;
-	t_list	*start;
+	t_list2	*temp;
+	t_list2	*temp2;
+	t_list2	*start;
 
 	if (*lst != NULL && (*lst)->next != NULL)
 	{

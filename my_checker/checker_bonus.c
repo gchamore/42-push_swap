@@ -6,13 +6,13 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 10:33:57 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/12 14:56:11 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:32:11 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap_bonus.h"
 
-int	ft_do_swp_and_psh(t_list **head_a, t_list **head_b, char *instruction)
+int	ft_do_swp_and_psh(t_list2 **head_a, t_list2 **head_b, char *instruction)
 {
 	if (ft_strncmp(instruction, "sa\n", ft_strlen(instruction)) == 0)
 		ft_swap(head_a);
@@ -32,7 +32,7 @@ int	ft_do_swp_and_psh(t_list **head_a, t_list **head_b, char *instruction)
 	return (1);
 }
 
-int	ft_do_rot_and_revrot(t_list **head_a, t_list **head_b, char *instruction)
+int	ft_do_rot_and_revrot(t_list2 **head_a, t_list2 **head_b, char *instruction)
 {
 	if (ft_strncmp(instruction, "ra\n", ft_strlen(instruction)) == 0)
 		ft_rotate(head_a);
@@ -57,7 +57,7 @@ int	ft_do_rot_and_revrot(t_list **head_a, t_list **head_b, char *instruction)
 	return (1);
 }
 
-int	ft_do_instructions(t_list **head_a, t_list **head_b, char *instruction)
+int	ft_do_instructions(t_list2 **head_a, t_list2 **head_b, char *instruction)
 {
 	int	check1;
 	int	check2;
@@ -71,7 +71,7 @@ int	ft_do_instructions(t_list **head_a, t_list **head_b, char *instruction)
 	return (1);
 }
 
-int	verif_instructions(t_list **head_a, t_list **head_b)
+int	verif_instructions(t_list2 **head_a, t_list2 **head_b)
 {
 	char	*line;
 
@@ -100,8 +100,8 @@ int	verif_instructions(t_list **head_a, t_list **head_b)
 
 int	main(int argc, char **argv)
 {
-	t_list	*head_a;
-	t_list	*head_b;
+	t_list2	*head_a;
+	t_list2	*head_b;
 	t_nbs	nbs;
 
 	if (argc == 1)

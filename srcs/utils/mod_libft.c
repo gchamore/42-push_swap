@@ -6,15 +6,15 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:51:17 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/08 18:19:48 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:29:33 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
-void	ft_mod_free(t_list *lst)
+void	ft_mod_free(t_list2 *lst)
 {
-	t_list	*next;
+	t_list2	*next;
 
 	if (lst)
 	{
@@ -53,7 +53,7 @@ long int	ft_mod_atol(const char *str)
 	return (total * signe);
 }
 
-void	*ft_mod_lstlast(t_list **lst)
+void	*ft_mod_lstlast(t_list2 **lst)
 {
 	if (lst)
 	{
@@ -63,9 +63,9 @@ void	*ft_mod_lstlast(t_list **lst)
 	return (NULL);
 }
 
-void	ft_mod_lstadd_back(t_list **lst, t_list *new)
+void	ft_mod_lstadd_back(t_list2 **lst, t_list2 *new)
 {
-	t_list	*temp;
+	t_list2	*temp;
 
 	temp = *lst;
 	if (!new)
@@ -82,11 +82,11 @@ void	ft_mod_lstadd_back(t_list **lst, t_list *new)
 	}
 }
 
-t_list	*ft_mod_new_lst(void)
+t_list2	*ft_mod_new_lst(void)
 {
-	t_list	*ptr;
+	t_list2	*ptr;
 
-	ptr = (t_list *)malloc(sizeof(t_list));
+	ptr = (t_list2 *)malloc(sizeof(t_list2));
 	if (!ptr)
 		return (NULL);
 	ptr->content = 0;

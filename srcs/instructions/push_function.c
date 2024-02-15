@@ -6,13 +6,13 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:17:47 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/07 18:50:02 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:29:53 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/push_swap.h"
 
-void	*ft_push_a(t_list **lst_B, t_list **lst_A)
+void	*ft_push_a(t_list2 **lst_B, t_list2 **lst_A)
 {
 	if (!lst_B)
 		return (NULL);
@@ -22,7 +22,7 @@ void	*ft_push_a(t_list **lst_B, t_list **lst_A)
 	return (NULL);
 }
 
-void	*ft_push_b(t_list **lst_A, t_list **lst_B)
+void	*ft_push_b(t_list2 **lst_A, t_list2 **lst_B)
 {
 	if (!lst_A)
 		return (NULL);
@@ -32,9 +32,9 @@ void	*ft_push_b(t_list **lst_A, t_list **lst_B)
 	return (NULL);
 }
 
-void	*ft_push(t_list **lst_1, t_list **lst_2)
+void	*ft_push(t_list2 **lst_1, t_list2 **lst_2)
 {
-	t_list	*tmp;
+	t_list2	*tmp;
 
 	if (*lst_1 == NULL)
 		return (NULL);

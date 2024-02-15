@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 16:57:19 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/09 12:56:52 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:28:45 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	*ft_verif_str(char **split, char *str)
 
 // Découpe une chaîne de caractères en sous-chaînes en fonction
 // des espaces, des tabulations et des sauts de ligne.
-char	**ft_split(char *str)
+char	**ft_mod_split(char *str)
 {
 	int		i;
 	char	**split;
@@ -93,16 +93,16 @@ char	**ft_split(char *str)
 
 // Analyse un seul argument et l'ajoute à la liste 'head_a', en
 // le découpant en sous-chaînes si nécessaire.
-void	*ft_parse_1_arg(char **argv, t_list *head_a)
+void	*ft_parse_1_arg(char **argv, t_list2 *head_a)
 {
 	int		y;
 	char	*str;
-	t_list	*pile_a;
+	t_list2	*pile_a;
 	int		len;
 	char	**split;
 
 	pile_a = head_a;
-	split = ft_split(argv[1]);
+	split = ft_mod_split(argv[1]);
 	len = ft_count_rows(split);
 	y = 0;
 	while (y < len)

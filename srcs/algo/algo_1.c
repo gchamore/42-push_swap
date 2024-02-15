@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:14:52 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/09 16:07:44 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:30:16 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // Applique l'algorithme de tri push_swap en utilisant
 // les fonctions auxiliaires.
-void	ft_algo(t_list **head_a, t_list **head_b, t_nbs *nbs)
+void	ft_algo(t_list2 **head_a, t_list2 **head_b, t_nbs *nbs)
 {
 	if (ft_is_sorted(head_a) == 0)
 	{
@@ -32,9 +32,9 @@ void	ft_algo(t_list **head_a, t_list **head_b, t_nbs *nbs)
 }
 
 // Vérifie si la liste est triée dans l'ordre ascendant.
-int	ft_is_sorted(t_list **head)
+int	ft_is_sorted(t_list2 **head)
 {
-	t_list	*lst;
+	t_list2	*lst;
 	int		small;
 
 	lst = *head;
@@ -52,7 +52,7 @@ int	ft_is_sorted(t_list **head)
 }
 
 // Applique une série d'opérations sur la liste pour pré-trier les éléments.
-void	ft_algo_pre_tri(t_list **head_a, t_list **head_b, t_nbs *nbs)
+void	ft_algo_pre_tri(t_list2 **head_a, t_list2 **head_b, t_nbs *nbs)
 {
 	int	check;
 	int	ct;
@@ -80,7 +80,7 @@ void	ft_algo_pre_tri(t_list **head_a, t_list **head_b, t_nbs *nbs)
 }
 
 // Trie les trois premiers éléments de la liste en ordre ascendant.
-void	ft_tri_three_a(t_list **head_a)
+void	ft_tri_three_a(t_list2 **head_a)
 {
 	if (ft_is_sorted(head_a) == 0)
 	{
@@ -104,9 +104,9 @@ void	ft_tri_three_a(t_list **head_a)
 }
 
 // Place le plus petit élément de la liste 'head' au sommet de la pile.
-void	ft_putsmallest_up(t_list **head)
+void	ft_putsmallest_up(t_list2 **head)
 {
-	t_list	*lst;
+	t_list2	*lst;
 	int		ct;
 	int		middle;
 

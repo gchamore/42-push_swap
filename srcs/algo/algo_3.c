@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:27:50 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/09 12:59:50 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:30:25 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // Remplit les opérations associées aux éléments de la liste 'head_b' en
 // fonction de leur position par rapport aux éléments de la liste 'head_a'.
-void	ft_fill_ops_a(t_list **head_a, t_list *lst1, t_list *lst2)
+void	ft_fill_ops_a(t_list2 **head_a, t_list2 *lst1, t_list2 *lst2)
 {
 	int	temp;
 
@@ -45,7 +45,7 @@ void	ft_fill_ops_a(t_list **head_a, t_list *lst1, t_list *lst2)
 
 // Vérifie si l'élément 'lst1' est le plus grand parmi les éléments 
 // de 'head_a' et ajuste les opérations de rotation en conséquence.
-int	ft_bg2(t_list **head_a, t_list *lst1, t_list *lst2, int temp)
+int	ft_bg2(t_list2 **head_a, t_list2 *lst1, t_list2 *lst2, int temp)
 {
 	int	index;
 	int	middle;
@@ -65,7 +65,7 @@ int	ft_bg2(t_list **head_a, t_list *lst1, t_list *lst2, int temp)
 
 // Vérifie si l'élément 'lst1' est le plus petit parmi les éléments
 // de 'head_a' et ajuste les opérations de rotation en conséquence.
-int	ft_sm2(t_list **head_a, t_list *lst1, t_list *lst2, int temp)
+int	ft_sm2(t_list2 **head_a, t_list2 *lst1, t_list2 *lst2, int temp)
 {
 	int	index;
 	int	middle;
@@ -85,7 +85,7 @@ int	ft_sm2(t_list **head_a, t_list *lst1, t_list *lst2, int temp)
 
 // Vérifie si l'élément 'lst2' est placé à l'extrémité de la liste 'head_a'
 // et ajuste les opérations de rotation en conséquence.
-int	ft_check_one_and_last(t_list **head_a, t_list *lst1, t_list *lst2, int temp)
+int	ft_check_one_and_last(t_list2 **head_a, t_list2 *lst1, t_list2 *lst2, int temp)
 {
 	int	index;
 	int	middle;
@@ -105,8 +105,8 @@ int	ft_check_one_and_last(t_list **head_a, t_list *lst1, t_list *lst2, int temp)
 
 // Vérifie la position de 'lst1' dans la liste 'head_a' et ajuste
 // les opérations de rotation en conséquence.
-void	ft_check_rank_and_next(t_list **head_a, t_list *lst1, \
-t_list *lst2, int temp)
+void	ft_check_rank_and_next(t_list2 **head_a, t_list2 *lst1, \
+t_list2 *lst2, int temp)
 {
 	int	index;
 	int	middle;

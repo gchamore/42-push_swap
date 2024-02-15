@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:22:27 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/08 11:38:41 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:29:01 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 // Vérifie si tous les éléments de la liste 'head_a'
 // sont plus petits que 'rank_b'.
-int	ft_sm(t_list **head_a, int rank_b)
+int	ft_sm(t_list2 **head_a, int rank_b)
 {
-	t_list	*lst;
+	t_list2	*lst;
 
 	lst = *head_a;
 	while (lst != NULL)
@@ -30,9 +30,9 @@ int	ft_sm(t_list **head_a, int rank_b)
 
 // Vérifie si tous les éléments de la liste 'head_a'
 // sont plus grands que 'rank_b'.
-int	ft_bg(t_list **head_a, int rank_b)
+int	ft_bg(t_list2 **head_a, int rank_b)
 {
-	t_list	*lst;
+	t_list2	*lst;
 
 	lst = *head_a;
 	while (lst != NULL)
@@ -45,9 +45,9 @@ int	ft_bg(t_list **head_a, int rank_b)
 }
 
 // Retourne la plus grande valeur dans la liste 'head'.
-int	ft_big_a(t_list **head)
+int	ft_big_a(t_list2 **head)
 {
-	t_list	*lst;
+	t_list2	*lst;
 	int		save;
 
 	lst = *head;
@@ -62,9 +62,9 @@ int	ft_big_a(t_list **head)
 }
 
 // Retourne la plus petite valeur dans la liste 'head'.
-int	ft_small_a(t_list **head)
+int	ft_small_a(t_list2 **head)
 {
-	t_list	*lst;
+	t_list2	*lst;
 	int		save;
 
 	lst = *head;
