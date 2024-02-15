@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:36:25 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/15 10:29:46 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 12:33:28 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		if (argc == 2)
+		{
+			if (ft_check_only_spaces(argv[1]) == 1)
+				return (free(head_a), ft_error(), 0);
 			head_a = ft_parse_1_arg(argv, head_a);
+		}
 		else
 			head_a = ft_parse_a(argc, argv, head_a);
 		if (!head_a)

@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:06:21 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/09 09:55:08 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 12:34:11 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,20 @@ int	ft_one_word_len(char *str)
 	while (str[i] != '\0' && !ft_is_delimiter(str[i]))
 		i++;
 	return (i);
+}
+
+int	ft_check_only_spaces(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '\0')
+		return (0);
+	while (str[i])
+	{
+		if (str[i] != ' ')
+			return (0);
+		i++;
+	}
+	return (1);
 }
