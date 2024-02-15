@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:27:50 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/15 10:30:25 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 10:47:51 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,8 @@ int	ft_sm2(t_list2 **head_a, t_list2 *lst1, t_list2 *lst2, int temp)
 
 // Vérifie si l'élément 'lst2' est placé à l'extrémité de la liste 'head_a'
 // et ajuste les opérations de rotation en conséquence.
-int	ft_check_one_and_last(t_list2 **head_a, t_list2 *lst1, t_list2 *lst2, int temp)
+int	ft_check_one_and_last(t_list2 **head_a, t_list2 *lst1, \
+t_list2 *lst2, int temp)
 {
 	int	index;
 	int	middle;
