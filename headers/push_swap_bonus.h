@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:52:01 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/15 10:32:44 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 15:59:08 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int			ft_do_rot_and_revrot(t_list2 **head_a, t_list2 **head_b, \
 int			ft_do_instructions(t_list2 **head_a, t_list2 **head_b, \
 			char *instruction);
 int			verif_instructions(t_list2 **head_a, t_list2 **head_b);
+int			ft_check_null(char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 10:33:57 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/15 12:33:43 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 16:39:02 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,23 +78,21 @@ int	verif_instructions(t_list2 **head_a, t_list2 **head_b)
 	line = NULL;
 	if (ft_is_sorted(head_a) == 1 && *head_b == NULL)
 	{
-		printf("OK\n");
+		ft_printf("OK\n");
 		return (1);
 	}
 	line = ft_get_next_line(0);
-	if (!line)
-		return (0);
 	while (line != NULL)
 	{
 		if (ft_do_instructions(head_a, head_b, line) == 0)
-			return (0);
+			return (ft_printf("2"), 0);
 		free(line);
 		line = ft_get_next_line(0);
 	}
 	if (ft_is_sorted(head_a) == 1 && *head_b == NULL)
-		printf("OK\n");
+		ft_printf("OK\n");
 	else
-		printf("KO\n");
+		ft_printf("KO\n");
 	return (1);
 }
 
@@ -111,7 +109,8 @@ int	main(int argc, char **argv)
 	{
 		if (argc == 2)
 		{
-			if (ft_check_only_spaces(argv[1]) == 1)
+			if (ft_check_only_spaces(argv[1]) == 1 || \
+			ft_check_null(argv[1]) == 1)
 				return (free(head_a), ft_error(), 0);
 			head_a = ft_parse_1_arg(argv, head_a);
 		}
@@ -121,7 +120,5 @@ int	main(int argc, char **argv)
 			return (ft_error(), 0);
 		verif_instructions(&head_a, &head_b);
 	}
-	ft_mod_free(head_a);
-	ft_mod_free(head_b);
-	return (0);
+	return (ft_mod_free(head_a), ft_mod_free(head_b), 0);
 }

@@ -6,7 +6,7 @@
 /*   By: gchamore <gchamore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:06:21 by gchamore          #+#    #+#             */
-/*   Updated: 2024/02/15 12:34:11 by gchamore         ###   ########.fr       */
+/*   Updated: 2024/02/15 16:05:12 by gchamore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,11 @@ int	ft_check_only_spaces(char *str)
 		i++;
 	}
 	return (1);
+}
+
+int	ft_check_null(char *str)
+{
+	if (*str == '\0')
+		return (1);
+	return (0);
 }
