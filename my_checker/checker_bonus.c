@@ -85,7 +85,7 @@ int	verif_instructions(t_list2 **head_a, t_list2 **head_b)
 	while (line != NULL)
 	{
 		if (ft_do_instructions(head_a, head_b, line) == 0)
-			return (ft_printf("2"), 0);
+			return (0);
 		free(line);
 		line = ft_get_next_line(0);
 	}
